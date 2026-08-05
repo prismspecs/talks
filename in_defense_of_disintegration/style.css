@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Lora:ital,wght@1,400;1,500&family=JetBrains+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root {
+  --bg: #000000;
+  --surface: #080808;
+  --red: oklch(0.70 0.20 28);
+  --white: #ffffff;
+  --muted: #8a8a8a;
+  --border: #444444;
+
+  --font-display: 'Major Mono Display', monospace;
+  --font-quote: 'Lora', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --transition-smooth: 0.18s cubic-bezier(0.19, 1, 0.22, 1);
+  --transition-fast: 0.08s step-end;
+  --smooth: 0.18s cubic-bezier(0.19, 1, 0.22, 1);
+  --fast: 0.08s step-end;
+
+  /* legacy aliases */
+  --primary-color: var(--red);
+  --accent-color: var(--white);
+  --ink-color: var(--white);
+  --muted-color: var(--muted);
+  --border-color: var(--border);
+  --bg-color: var(--bg);
+  --surface-color: var(--surface);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%; overflow: hidden;
+  background: var(--bg); color: var(--white);
+  font-family: var(--font-mono); font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app-container {
+  position: relative; width: 100vw; height: 100vh; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+
+.noise-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.25) 50%);
+  background-size: 100% 4px; opacity: 0.5;
+  pointer-events: none;
+}
+
+#presentation-deck {
+  position: relative; flex-grow: 1; width: 100%; height: 100%;
+}
+
+.slide {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem 3rem;
+  opacity: 0; pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity var(--smooth), transform var(--smooth);
+}
+
+.slide.active { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+.slide-content {
+  width: 100%; max-width: 1000px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 1.5rem;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6.5vw, 5.8rem); font-weight: 400;
+  line-height: 1; letter-spacing: 0.01em;
+  text-transform: uppercase; text-wrap: balance;
+  color: var(--white);
+}
+
+h3 {
+  font-family: var(--font-mono);
+  color: var(--red); text-transform: uppercase;
+  letter-spacing: 0.15em; font-weight: 600;
+  font-size: 1.52rem;
+}
+
+/* ── Shared flex column centered block ── */
+
+.title-layout, .quote-layout, .thesis-layout, .visual-layout {
+  display: flex; flex-direction: column; align-items: center;
+  width: 100%;
+}
+
+.title-layout { gap: 1.5rem; }
+
+.title-layout .subtitle {
+  font-size: 1.15rem; color: var(--muted);
+  letter-spacing: 0.1em; text-transform: lowercase;
+}
+
+/* ── Quote ── */
+
+.quote-layout, .thesis-layout { padding: 0 1rem; }
+
+blockquote {
+  font-family: var(--font-quote); font-style: italic; font-weight: 400;
+  font-size: clamp(1.3rem, 2.6vw, 2rem); line-height: 1.45;
+  color: var(--white); text-wrap: pretty; margin-bottom: 2rem;
+}
+
+blockquote .em { color: var(--red); font-style: normal; font-weight: 500; }
+
+/* ── Thesis body ── */
+
+.thesis-layout p, .thesis-layout ul {
+  font-size: clamp(1.2rem, 2.4vw, 1.7rem); line-height: 1.65;
+  text-wrap: pretty; margin-bottom: 2rem;
+  text-align: left; max-width: 70ch;
+}
+
+/* ── Meta label (attribution) ── */
+
+.quote-attribution {
+  font-size: 1rem; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;
+}
+
+/* ── Images ── */
+
+.image-frame {
+  width: 100%; max-width: 1400px; max-height: 78vh;
+  overflow: hidden; background: #000;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.image-frame img {
+  width: 100%; height: auto; max-height: calc(78vh - 6px);
+  object-fit: contain; display: block;
+}
+
+.image-caption {
+  font-size: 1rem; color: var(--muted);
+  margin-top: 1rem; text-align: center;
+  letter-spacing: 0.05em; text-transform: lowercase;
+}
+
+/* ── Code ── */
+
+.code-container {
+  width: 100%; max-width: 720px;
+  background: #020202; border: 1px solid var(--border);
+  text-align: left; overflow: hidden;
+}
+
+.code-header {
+  background: #111; padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.code-dots { display: flex; gap: 0.4rem; }
+.code-dot { width: 6px; height: 6px; background: #222; }
+.code-dot.red { background: var(--red); }
+
+.code-title {
+  font-size: 0.9rem; font-weight: bold;
+}
+
+pre {
+  margin: 0; padding: 1.5rem; overflow-x: auto;
+  font-size: clamp(0.9rem, 2.1vw, 1.05rem); line-height: 1.4;
+}
+
+.code-keyword, .code-number { color: var(--red); font-weight: bold; }
+.code-def, .code-builtin { color: var(--white); font-weight: bold; }
+.code-string { color: #888; }
+
+/* ── References ── */
+
+.ref-list-v2 {
+  list-style: none; text-align: left;
+  font-size: 0.9rem; line-height: 1.6;
+  display: flex; flex-direction: column; gap: 1.25rem;
+  max-width: 800px; margin: 0 auto;
+}
+
+.ref-list-v2 li {
+  padding-left: 2rem; text-indent: -2rem; border-left: 1px solid #2a2a2a;
+}
+
+.ref-list-v2 strong { color: var(--red); }
+
+/* ── Header / Audio ── */
+
+#header-bar, #footer-controls {
+  padding: 0.75rem 3rem;
+  display: flex; align-items: center; background: transparent; z-index: 5;
+}
+
+#header-bar { justify-content: flex-end; }
+#footer-controls { justify-content: space-between; }
+
+.audio-player-wrapper {
+  display: flex; align-items: center; gap: 1.25rem;
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 0.4rem 0.8rem; border-radius: 4px;
+}
+
+.play-pause-btn, .volume-btn {
+  background: none; border: none; cursor: pointer;
+  display: flex; align-items: center;
+}
+
+.play-pause-btn { width: 20px; height: 20px; }
+.play-pause-btn svg { fill: var(--white); transition: fill var(--fast); }
+.play-pause-btn:hover svg { fill: var(--red); }
+
+.volume-wrapper { display: flex; align-items: center; gap: 0.5rem; }
+
+.volume-btn svg {
+  fill: var(--muted); width: 12px; height: 12px; transition: fill var(--fast);
+}
+.volume-btn:hover svg { fill: var(--white); }
+
+.volume-slider {
+  -webkit-appearance: none; appearance: none;
+  width: 50px; height: 3px; border-radius: 1.5px;
+  background: var(--bg); border: 1px solid var(--border); outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--red); cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 8px; height: 8px; border-radius: 50%;
+  border: none; background: var(--red); cursor: pointer;
+}
+
+/* ── Footer / Navigation ── */
+
+.nav-buttons { display: flex; gap: 0.75rem; }
+
+.btn-nav {
+  background: none; border: 1px solid var(--border); color: var(--white);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; transition: var(--fast);
+}
+
+.btn-nav:hover:not(:disabled) {
+  background: var(--red); border-color: var(--red); color: #000;
+}
+
+.btn-nav:disabled { border-color: #333; color: #333; cursor: not-allowed; }
+
+.slide-counter {
+  font-size: 0.9rem; color: var(--muted); letter-spacing: 0.1em;
+}
+
+/* ── Buttons on slides ── */
+
+.btn-play-slide {
+  background: none; border: 1px solid var(--red); color: var(--red);
+  font-size: 1rem; text-transform: uppercase; letter-spacing: 0.25em;
+  cursor: pointer; padding: 0.6rem 1.8rem; margin-top: 1rem;
+  transition: color var(--fast), background var(--fast);
+}
+
+.btn-play-slide:hover { background: var(--red); color: #000; }
+
+.contact-links a:hover { color: var(--red) !important; }
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  #header-bar, #footer-controls { padding: 0.5rem 1.5rem; }
+  .slide { padding: 0.75rem 1.5rem; }
+
+  h1 { font-size: clamp(2.2rem, 6vw, 3.3rem); }
+  blockquote { font-size: clamp(1.1rem, 3vw, 1.5rem); }
+  .thesis-layout p { font-size: 1.2rem; }
+
+  .image-frame { max-width: 90vw; max-height: 55vh; }
+  .image-frame img { max-height: calc(55vh - 6px); }
+
+  .volume-wrapper { display: none; }
+}
