@@ -3,14 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Return to Sender — slideshow</title>
+<title>Return to Sender - slideshow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { height: 100%; }
   body {
     background: #000;
     color: #fff;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -84,14 +87,15 @@
     padding: 14px 16px 20px;
   }
   #controls button {
-    background: #fff; color: #000; border: 0; cursor: pointer;
-    font-size: 1rem; padding: 10px 20px; border-radius: 4px; min-width: 110px;
+    background: transparent; color: rgba(255,255,255,0.7); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s ease;
   }
-  #controls button:hover { background: #ddd; }
+  #controls button:hover { color: #fff; transform: scale(1.1); }
   #counter { font-size: 0.85rem; opacity: 0.55; font-variant-numeric: tabular-nums; min-width: 70px; text-align: center; }
   #hint { font-size: 0.7rem; opacity: 0.3; }
   @media (max-width: 640px) {
-    #controls button { min-width: 0; flex: 1; }
+    /* removed flex: 1 to keep arrows small */
   }
 </style>
 </head>
@@ -99,16 +103,29 @@
   <div id="stage"></div>
   <div id="caption" contenteditable="true" spellcheck="false"></div>
   <div id="controls">
-    <button id="prev">← Back</button>
+    <button id="prev">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
     <span id="counter">1 / 1</span>
-    <button id="next">Forward →</button>
+    <button id="next">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
   </div>
   <div id="hint" style="position:fixed;right:10px;bottom:6px;">←/→ navigate · space play/pause · double-click caption to edit</div>
 
 <script src="slides.js"></script>
 <script>
   let slides = [];
-  let idx = 0;
+  let idx = parseInt(window.location.hash.slice(1) || localStorage.getItem('rts-slide') || '0', 10);
+
+  window.addEventListener('hashchange', () => {
+    const h = parseInt(window.location.hash.slice(1), 10);
+    if (!isNaN(h) && h !== idx && h >= 0 && h < slides.length) {
+      idx = h;
+      localStorage.setItem('rts-slide', idx);
+      render();
+    }
+  });
   const stage = document.getElementById('stage');
   const captionEl = document.getElementById('caption');
   const counterEl = document.getElementById('counter');
@@ -193,6 +210,8 @@
   function go(n) {
     if (n < 0 || n >= slides.length) return;
     idx = n;
+    localStorage.setItem('rts-slide', idx);
+    window.location.hash = idx;
     render();
   }
 
@@ -218,6 +237,8 @@
   });
 
   slides = SLIDES.slides;
+  if (isNaN(idx) || idx < 0) idx = 0;
+  if (idx >= slides.length) idx = slides.length - 1;
   render();
 </script>
 </body>
