@@ -14,6 +14,8 @@
   const progressEl = document.getElementById('progress');
   const btnPrev = document.getElementById('prev');
   const btnNext = document.getElementById('next');
+  const btnNotes = document.getElementById('notes');
+  let notesWin = null;
 
   function el(tag, cls, text) {
     const n = document.createElement(tag);
@@ -120,6 +122,7 @@
     btnPrev.disabled = (idx === 0);
     btnNext.disabled = (idx === slides.length - 1);
     document.title = (s.title || s.caption || 'Digital Sabotage') + ' — Digital Sabotage';
+    syncNotes();
   }
 
   function go(n) {
@@ -127,6 +130,23 @@
     idx = n;
     window.location.hash = idx + 1;
     render();
+  }
+
+  function openNotes() {
+    if (notesWin && !notesWin.closed) { notesWin.focus(); return; }
+    notesWin = window.open('notes.html', 'digital-sabotage-notes', 'width=540,height=800');
+    if (notesWin) {
+      btnNotes.classList.add('active');
+      setTimeout(syncNotes, 350);
+    }
+  }
+
+  function syncNotes() {
+    if (notesWin && !notesWin.closed) {
+      notesWin.postMessage({ slide: idx }, '*');
+    } else if (btnNotes) {
+      btnNotes.classList.remove('active');
+    }
   }
 
   window.addEventListener('hashchange', () => {
@@ -143,6 +163,7 @@
     if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
     else document.exitFullscreen();
   });
+  btnNotes.addEventListener('click', openNotes);
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') go(idx - 1);
@@ -153,6 +174,7 @@
       if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
       else document.exitFullscreen();
     }
+    else if (e.key === 'n' || e.key === 'N') openNotes();
   });
 
   let touchX = 0;

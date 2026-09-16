@@ -1,0 +1,3 @@
+**Digital Sabotage** — a lecture and workshop exploring speculative tools for digital monkeywrenching and workplace sabotage.
+
+Spanning Edward Abbey's Monkey Wrench Gang to FloodNet, the etoy war, SETI@home, and Bail Bloc, the talk moves from documenting broken systems toward intervening on them directly. The workshop asks participants to invent their own speculative technologies for workplace refusal — from printer hacks to crypto-for-bail pipelines.

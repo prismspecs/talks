@@ -255,6 +255,7 @@
   }
   #controls button:hover:not(:disabled) { color: #fff; }
   #controls button:disabled { opacity: 0.25; cursor: default; }
+  #controls button.active { color: #ff4d00; }
   #counter {
     font-family: 'Space Mono', monospace;
     font-size: 0.8rem;
