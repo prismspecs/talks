@@ -140,6 +140,24 @@
     letter-spacing: 0.1em;
   }
 
+  /* section divider */
+  .section-wrap { text-align: center; padding: 24px; max-width: 900px; }
+  .section-title {
+    font-size: clamp(2.2rem, 7vw, 5rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .section-sub {
+    margin-top: 18px;
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    color: #ff4d00;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+  }
+
   /* slide title */
   .slide-title {
     font-family: 'Space Mono', monospace;
@@ -178,13 +196,13 @@
     font-size: clamp(1.05rem, 2.2vw, 1.35rem);
     line-height: 1.55;
     color: #cfcfcf;
+    text-align: center;
   }
   .text-wrap p.line {
     font-family: 'Space Mono', monospace;
-    font-size: clamp(1rem, 2.1vw, 1.25rem);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
     color: #fff;
-    padding-left: 1rem;
-    border-left: 2px solid #ff4d00;
+    text-align: center;
   }
 
   .textimg {

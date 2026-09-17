@@ -53,7 +53,7 @@
 
   // Each `## Heading {#slug}` in lecture-notes.md becomes <section id="sec-<slug>">.
   // Slides declare which section they belong to via their own `note: "<slug>"`
-  // field in slides-data.js — no separate index to keep in sync here.
+  // field in slides-data.js, so there is no separate index to keep in sync here.
   const HEADING_RE = /^##\s+(.+?)(?:\s*\{#([a-z0-9-]+)\}\s*)?$/;
   const knownSlugs = new Set();
 
@@ -109,16 +109,16 @@
     const slug = slide && slide.note;
     if (!slug) return;
     focusSection(slug);
-    status.textContent = 'synced — slide ' + (e.data.slide + 1);
+    status.textContent = 'synced, slide ' + (e.data.slide + 1);
   });
 
-  fetch('lecture-notes.md')
+  fetch('lecture-notes.md', { cache: 'no-store' })
     .then((r) => {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.text();
     })
     .then(render)
     .catch(() => {
-      content.innerHTML = '<p class="error">Could not load lecture-notes.md directly.<br>Notes are meant to be served over http — open the deck from a local server or its published URL, or read the file in the repo.</p>';
+      content.innerHTML = '<p class="error">Could not load lecture-notes.md directly.<br>Notes are meant to be served over http. Open the deck from a local server or its published URL, or read the file in the repo.</p>';
     });
 })();

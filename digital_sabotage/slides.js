@@ -1,5 +1,5 @@
 /*
-  Digital Sabotage — deck engine.
+  Digital Sabotage: deck engine.
   Slide content lives in slides-data.js (data) + media/ (assets); nothing here.
   Hash navigation is 1-based so the URL matches the on-screen counter.
 */
@@ -34,6 +34,12 @@
       d.append(el('h1', null, s.title));
       d.append(el('p', 'subtitle', s.subtitle));
       d.append(el('p', 'byline', s.byline));
+      stage.append(d);
+      captionEl.textContent = '';
+    } else if (s.kind === 'section') {
+      const d = el('div', 'section-wrap');
+      d.append(el('h1', 'section-title', s.title));
+      if (s.sub) d.append(el('p', 'section-sub', s.sub));
       stage.append(d);
       captionEl.textContent = '';
     } else if (s.kind === 'image') {
@@ -121,7 +127,7 @@
     progressEl.style.width = ((idx + 1) / slides.length * 100) + '%';
     btnPrev.disabled = (idx === 0);
     btnNext.disabled = (idx === slides.length - 1);
-    document.title = (s.title || s.caption || 'Digital Sabotage') + ' — Digital Sabotage';
+    document.title = (s.title || s.caption || 'Digital Sabotage') + ' | Digital Sabotage';
     syncNotes();
   }
 

@@ -1,9 +1,5 @@
 # Digital Sabotage: Speaker Notes
 
-*Expanded from the Pioneer Works talk ([video](https://www.youtube.com/watch?v=GjKb4h4lSbs)) with additional reference material for the full deck.*
-
----
-
 ## Post-Awareness Art {#post-awareness}
 
 > "We are at peak awareness. Everyone more or less knows what's going on. The real challenge is how to move beyond that and intervene directly on the systems themselves rather than produce more evidence of why the system is so messed up."
@@ -32,15 +28,63 @@ The gamification of dissent, and corporate sabotage. eToys.com launched a cease-
 
 ---
 
+## Impersonation {#impersonation}
+
+Three ways of occupying an institution's own authority instead of arguing with it from outside: putting on its voice, its identity, or its format.
+
+---
+
+## Barbie Liberation Organization (1993) {#barbie-liberation}
+
+Founded by Jacques Servin and Igor Vamos, who later started The Yes Men. The BLO bought hundreds of Teen Talk Barbie and Talking Duke G.I. Joe dolls, swapped their voice boxes, and returned the modified dolls to store shelves through what they called "reverse shoplifting." Kids who unwrapped them got a Barbie growling "vengeance is mine" and a G.I. Joe chirping "the beach is the place for summer!" The dolls themselves became the impersonators, and the toy companies had no real recourse.
+
+---
+
+## The Yes Men: the Dow Chemical hoax (2004) {#yes-men}
+
+On December 3, 2004, the twentieth anniversary of the Bhopal disaster, Andy Bichlbaum of The Yes Men appeared on BBC World News as "Jude Finisterra," a fictitious Dow Chemical spokesman, and announced that Dow would liquidate Union Carbide and use the $12 billion to compensate Bhopal victims, clean the site, and fund research into its other products' hazards. Dow's stock fell 4.24% in Frankfurt within 23 minutes, wiping out $2 billion in market value, before the BBC issued a correction. A fake domain and a fake identity, worn convincingly enough to move a real stock price.
+
+---
+
+## White Collar Crime Risk Zones (Sam Lavigne, Francis Tseng & Brian Clifton, 2017) {#white-collar-crime}
+
+A predictive-policing app for The New Inquiry that points the genre at a different target. Trained on FINRA financial-malfeasance data going back to 1964, it applies the same risk-terrain modeling used by real police departments, but maps it to the neighborhoods where financial crime is most likely, not the neighborhoods poverty-focused policing usually targets. It doesn't impersonate a person; it impersonates the format and authority of a law-enforcement tool.
+
+---
+
 ## Tripwire (Tad Hirsch, 2006) {#tripwire}
 
 Automated bureaucratic friction. Made with the Institute for Applied Autonomy for the 2006 01SJ Biennial: custom-built noise sensors, hidden in coconuts, hung in a public park near the San Jose airport. Excessive airplane noise triggered automated phone calls to the airport's complaint line, on behalf of residents and wildlife.
 
 ---
 
+## Allison Burtch: Log Jammer (2014) {#log-jammer}
+
+A cellphone signal jammer, built as part of Burtch's ITP thesis, hollowed out and hidden inside a log. It broadcasts noise on the GSM-1900 band to kill cell reception in a small radius, carving out a patch of forest that can't be reached. Where Tripwire hides a sensor in nature to feed a system, Log Jammer hides a jammer in nature to cut one off. Same camouflage, opposite direction.
+
+---
+
+## Automation {#automation}
+
+A short run of works that hand the act of sabotage itself over to a machine: a teleoperated robot, a botnet, a drone. None of them need a human hand on the actual point of contact, only a human decision to set the system loose.
+
+---
+
 ## Contestational Robotics (Institute for Applied Autonomy, 2003) {#contestational-robotics}
 
 Subverting automation for protest. Projects like *Graffiti Writer*, a teleoperated robot that spray-paints messages on the street, showed how technology usually reserved for state surveillance or industrial capital could be turned toward civilian dissent and autonomous action.
+
+---
+
+## Synthetic Messenger (Tega Brain & Sam Lavigne, 2021) {#synthetic-messenger}
+
+Algorithmic disruption and financial sabotage. A botnet that clicks on climate-change advertisements to inflate their algorithmic value and drain the ad budgets of fossil-fuel companies, intervening directly in the attention economy.
+
+---
+
+## Abortion Drone (Women on Waves, 2015) {#abortion-drone}
+
+On June 27, 2015, the activist group Women on Waves flew an unmanned drone from Frankfurt an der Oder, Germany, across the border to Słubice, Poland, carrying abortion pills. Poland is one of only two EU countries (with Malta) where abortion is criminalized, and the flight bypassed customs and border enforcement entirely, turning a hobbyist quadcopter into logistics infrastructure for reproductive autonomy. Photographer Laia Abril later documented the drone as part of *On Abortion*, her long-term project on the repercussions of restricted abortion access.
 
 ---
 
@@ -83,12 +127,6 @@ The analog predecessor to data-driven institutional critique. For the 1970 *Info
 ## Slow Hot Computer (Sam Lavigne, 2015) {#slow-hot-computer}
 
 Speculative workplace slacking. A website with one job: make the user's computer run slow and hot by intentionally exhausting system resources. A tool for digital time theft, giving workers an excuse for lowered productivity.
-
----
-
-## Synthetic Messenger (Tega Brain & Sam Lavigne, 2021) {#synthetic-messenger}
-
-Algorithmic disruption and financial sabotage. A botnet that clicks on climate-change advertisements to inflate their algorithmic value and drain the ad budgets of fossil-fuel companies, intervening directly in the attention economy.
 
 ---
 
