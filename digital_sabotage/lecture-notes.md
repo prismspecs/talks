@@ -14,12 +14,6 @@ A flash of other things: a speculative sneaker with an embedded circuit board, t
 
 ---
 
-## Training Robots How to Give the Finger {#hand-learning}
-
-Reinforcement learning in Unity ML-Agents: training a simulated robotic hand how to flip the bird.
-
----
-
 ## Sabotage: a brief etymology {#sabotage-etymology}
 
 From *sabot*, the wooden clog of the French worker. The story goes that workers threw their clogs into factory machinery to jam the gears and stop production. Historians dispute whether clogs were ever really thrown, but the word stuck: stopping the machine from the inside.

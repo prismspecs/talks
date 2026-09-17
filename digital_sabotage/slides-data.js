@@ -10,7 +10,7 @@ window.SLIDES = [
 
   { "kind": "video", "src": "media/hand-learning.mp4", "poster": "media/hand-learning-poster.jpg",
     "caption": "training robots how to give the finger",
-    "note": "hand-learning" },
+    "note": "other-work" },
 
   { "kind": "textimg",
     "title": "SABOTAGE",
