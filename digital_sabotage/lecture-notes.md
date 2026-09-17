@@ -8,17 +8,17 @@ Society has reached peak awareness. Producing evidence of broken systems is no l
 
 ---
 
-## Other Work {#other-work}
-
-A flash of other things: a speculative sneaker with an embedded circuit board, the "ULTRA LUXURY ART / ULTRA LOW WAGES" projection on the Guggenheim, press on the Hans Haacke piece, a balloon installation about policing, the NSA Haiku Generator, and "CANCEL TRUMP" projected on the UK Parliament with The Illuminator. None of it gets its own slide tonight, just here to show the range.
-
----
-
 ## Sabotage: a brief etymology {#sabotage-etymology}
 
 From *sabot*, the wooden clog of the French worker. The story goes that workers threw their clogs into factory machinery to jam the gears and stop production. Historians dispute whether clogs were ever really thrown, but the word stuck: stopping the machine from the inside.
 
 *Redneck*, too, is said to come from a worker's garment, the red bandana coal miners wore as a sign of solidarity in the twentieth century.
+
+---
+
+## Other Work {#other-work}
+
+A flash of other things: a speculative sneaker with an embedded circuit board, the "ULTRA LUXURY ART / ULTRA LOW WAGES" projection on the Guggenheim, press on the Hans Haacke piece, a balloon installation about policing, the NSA Haiku Generator, and "CANCEL TRUMP" projected on the UK Parliament with The Illuminator. None of it gets its own slide tonight, just here to show the range.
 
 ---
 

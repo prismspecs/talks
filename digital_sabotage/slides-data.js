@@ -4,14 +4,6 @@ window.SLIDES = [
     "byline": "Grayson Earle, Akademie Schloss Solitude Web Residency",
     "note": "post-awareness" },
 
-  { "kind": "image", "src": "media/other-work-montage.jpg",
-    "caption": "and other things",
-    "note": "other-work" },
-
-  { "kind": "video", "src": "media/hand-learning.mp4", "poster": "media/hand-learning-poster.jpg",
-    "caption": "training robots how to give the finger",
-    "note": "other-work" },
-
   { "kind": "textimg",
     "title": "SABOTAGE",
     "sub": "a brief etymology",
@@ -21,6 +13,14 @@ window.SLIDES = [
     ],
     "src": "media/sabotage-etymology.png",
     "note": "sabotage-etymology" },
+
+  { "kind": "image", "src": "media/other-work-montage.jpg",
+    "caption": "and other things",
+    "note": "other-work" },
+
+  { "kind": "video", "src": "media/hand-learning.mp4", "poster": "media/hand-learning-poster.jpg",
+    "caption": "training robots how to give the finger",
+    "note": "other-work" },
 
   { "kind": "section",
     "title": "Mass Action",
