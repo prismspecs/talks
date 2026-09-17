@@ -8,15 +8,35 @@ Society has reached peak awareness. Producing evidence of broken systems is no l
 
 ---
 
-## The Monkey Wrench Gang (Edward Abbey, 1975) {#monkey-wrench-gang}
+## Other Work {#other-work}
 
-Where the term "monkeywrenching" comes from. Abbey's 1975 novel popularized sabotage as environmental defense: literally throwing a wrench into the gears of industry to halt ecological destruction. It frames physical sabotage as a necessary, moral response to systemic harm, and sets the philosophical groundwork for translating those tactics into the digital sphere.
+A flash of other things: a speculative sneaker with an embedded circuit board, the "ULTRA LUXURY ART / ULTRA LOW WAGES" projection on the Guggenheim, press on the Hans Haacke piece, a balloon installation about policing, the NSA Haiku Generator, and "CANCEL TRUMP" projected on the UK Parliament with The Illuminator. None of it gets its own slide tonight, just here to show the range.
+
+---
+
+## Training Robots How to Give the Finger {#hand-learning}
+
+Reinforcement learning in Unity ML-Agents: training a simulated robotic hand how to flip the bird.
+
+---
+
+## Sabotage: a brief etymology {#sabotage-etymology}
+
+From *sabot*, the wooden clog of the French worker. The story goes that workers threw their clogs into factory machinery to jam the gears and stop production. Historians dispute whether clogs were ever really thrown, but the word stuck: stopping the machine from the inside.
+
+*Redneck*, too, is said to come from a worker's garment, the red bandana coal miners wore as a sign of solidarity in the twentieth century.
+
+---
+
+## Mass Action {#mass-action}
+
+Two works that scale a crowd up into a weapon, then reframe the attack as something legitimate: a sit-in, a game.
 
 ---
 
 ## FloodNet (Ricardo Dominguez / Electronic Disturbance Theater, 1998) {#floodnet}
 
-The birth of the virtual sit-in, and of legal framing as artistic strategy. A downloadable program made a user's computer part of a DDoS attack, sending millions of low-level pings. Used against the Mexican government and the World Economic Forum.
+The birth of the virtual sit-in. A downloadable program made a user's computer part of a DDoS attack, sending millions of low-level pings. Used against the Mexican government and the World Economic Forum.
 
 **Legal precedent:** Dominguez successfully argued in court that FloodNet was protected as free speech. By framing it as a "virtual sit-in," it was granted historical continuity with the civil rights sit-ins of the 1960s, using that framing as a legal shield.
 
@@ -25,6 +45,14 @@ The birth of the virtual sit-in, and of legal framing as artistic strategy. A do
 ## eToy War / ®TMark (1999) {#etoy-war}
 
 The gamification of dissent, and corporate sabotage. eToys.com launched a cease-and-desist against the European net-art group eToy over domain and trademark infringement. ®TMark and activists responded with a gamified sabotage campaign: participants earned points for escalating media coverage, 10 points for a negative online review, 100 for local news, 10,000 for national coverage. The resulting PR crisis helped drive the corporation's stock price down to nothing.
+
+**eToy vs. ®TMark:** not the same group. eToy is the Zurich-based net-art collective (founded 1994) that eToys.com actually sued. ®TMark is a separate activist collective (founded 1991) that funds and coordinates culture-jamming campaigns; it set up an "etoy Fund" and organized the public Toywar points campaign in eToy's defense. Allies, not the same organization.
+
+---
+
+## Wafaa Bilal: Domestic Tension (Shoot an Iraqi), 2007 {#domestic-tension}
+
+The inverse of FloodNet. For 30 days in May 2007, Bilal confined himself to a room at FlatFile Galleries in Chicago rigged with a paintball gun and a webcam, both controlled live over the internet. Anyone online could aim and fire at him, 24 hours a day, for the whole month. Shooters from 128 countries fired a combined 60,000 rounds. Bilal, an Iraqi refugee, built the piece to collapse the distance between a remote trigger and the person on the other end of it, the same distance that lets a drone operator or an internet troll act without feeling the weight of it. Where FloodNet turns a crowd into a DDoS attack on a server, this turns a crowd into a firing squad on a person, live, for a month.
 
 ---
 
@@ -42,25 +70,13 @@ Founded by Jacques Servin and Igor Vamos, who later started The Yes Men. The BLO
 
 ## The Yes Men: the Dow Chemical hoax (2004) {#yes-men}
 
-On December 3, 2004, the twentieth anniversary of the Bhopal disaster, Andy Bichlbaum of The Yes Men appeared on BBC World News as "Jude Finisterra," a fictitious Dow Chemical spokesman, and announced that Dow would liquidate Union Carbide and use the $12 billion to compensate Bhopal victims, clean the site, and fund research into its other products' hazards. Dow's stock fell 4.24% in Frankfurt within 23 minutes, wiping out $2 billion in market value, before the BBC issued a correction. A fake domain and a fake identity, worn convincingly enough to move a real stock price.
+On December 3, 2004, the twentieth anniversary of the Bhopal disaster, in which a Union Carbide pesticide plant leaked toxic gas over Bhopal, India, in 1984, killing thousands in the immediate aftermath and injuring several hundred thousand more, Andy Bichlbaum of The Yes Men appeared on BBC World News as "Jude Finisterra," a fictitious Dow Chemical spokesman, and announced that Dow would liquidate Union Carbide and use the $12 billion to compensate Bhopal victims, clean the site, and fund research into its other products' hazards. Dow's stock fell 4.24% in Frankfurt within 23 minutes, wiping out $2 billion in market value, before the BBC issued a correction. A fake domain and a fake identity, worn convincingly enough to move a real stock price.
 
 ---
 
 ## White Collar Crime Risk Zones (Sam Lavigne, Francis Tseng & Brian Clifton, 2017) {#white-collar-crime}
 
-A predictive-policing app for The New Inquiry that points the genre at a different target. Trained on FINRA financial-malfeasance data going back to 1964, it applies the same risk-terrain modeling used by real police departments, but maps it to the neighborhoods where financial crime is most likely, not the neighborhoods poverty-focused policing usually targets. It doesn't impersonate a person; it impersonates the format and authority of a law-enforcement tool.
-
----
-
-## Tripwire (Tad Hirsch, 2006) {#tripwire}
-
-Automated bureaucratic friction. Made with the Institute for Applied Autonomy for the 2006 01SJ Biennial: custom-built noise sensors, hidden in coconuts, hung in a public park near the San Jose airport. Excessive airplane noise triggered automated phone calls to the airport's complaint line, on behalf of residents and wildlife.
-
----
-
-## Allison Burtch: Log Jammer (2014) {#log-jammer}
-
-A cellphone signal jammer, built as part of Burtch's ITP thesis, hollowed out and hidden inside a log. It broadcasts noise on the GSM-1900 band to kill cell reception in a small radius, carving out a patch of forest that can't be reached. Where Tripwire hides a sensor in nature to feed a system, Log Jammer hides a jammer in nature to cut one off. Same camouflage, opposite direction.
+A predictive-policing app, still live at [whitecollar.thenewinquiry.com](https://whitecollar.thenewinquiry.com/), made for The New Inquiry that points the genre at a different target. Trained on FINRA financial-malfeasance data going back to 1964, it applies the same risk-terrain modeling used by real police departments, but maps it to the neighborhoods where financial crime is most likely, not the neighborhoods poverty-focused policing usually targets. It doesn't impersonate a person; it impersonates the format and authority of a law-enforcement tool.
 
 ---
 
@@ -76,9 +92,15 @@ Subverting automation for protest. Projects like *Graffiti Writer*, a teleoperat
 
 ---
 
+## AdNauseam (Daniel C. Howe, Helen Nissenbaum & Mushon Zer-Aviv, 2014) {#adnauseam}
+
+A browser extension, built on ad-blocking infrastructure, that silently clicks every ad it blocks. Each click registers a fake visit in the ad networks' own databases, flooding the profile they've built of you with noise until it's useless for targeting. Where an ad blocker just refuses to look, AdNauseam answers back at scale, automatically, on every page. Synthetic Messenger takes the same move and points it at a single target.
+
+---
+
 ## Synthetic Messenger (Tega Brain & Sam Lavigne, 2021) {#synthetic-messenger}
 
-Algorithmic disruption and financial sabotage. A botnet that clicks on climate-change advertisements to inflate their algorithmic value and drain the ad budgets of fossil-fuel companies, intervening directly in the attention economy.
+Algorithmic disruption and financial sabotage. A botnet that clicks on climate-change advertisements to inflate their algorithmic value, intervening directly in the attention economy. The real target isn't the ad budgets, it's the incentive: by making ad inventory next to climate coverage look more valuable, it makes it appear more profitable for outlets to publish climate journalism in the first place.
 
 ---
 
@@ -106,35 +128,47 @@ Partnered with the Bronx Freedom Fund and the Connecticut Immigrant Bond Fund to
 
 ---
 
+## Tax Avoidance {#tax-avoidance}
+
+Three works that don't argue with the tax code, they use it: a forged certificate, a receipt, a performance, each one turning a bureaucratic instrument into a deductible expense or a way of exposing how the whole system runs on paperwork.
+
+---
+
+## Paolo Cirio: Loophole for All (2013) {#loophole-for-all}
+
+Cirio hacked the Cayman Islands corporate registry, pulled the names of over 200,000 anonymous shell companies, and forged official Certificates of Incorporation for them, each one signed with his own name as "Assistant Registrar of Companies." He then sold the real identities of these companies online for $99 each, undercutting the entire offshore-secrecy business model. Banks, law firms, and the Cayman Islands government all objected. The forged certificate is the artwork: fake paperwork that borrows a real registrar's authority to expose the fake paperwork the offshore system runs on.
+
+---
+
 ## Tax Deductible Expenses (Grayson Earle, 2016) {#tax-deductible}
 
 Weaponizing bureaucratic loopholes. A performance piece: every mundane purchase made over a year, food, clothing, was recorded and treated as "art materials" for a performance about consuming the item. That let the expenses be written off as professional tax deductions, a critique of corporate tax dodging and a prefigurative tactic for everyday resistance.
 
 ---
 
-## Hacking Hans Haacke at the New Museum (Grayson Earle, 2020) {#haacke-hack}
+## 60€ Fine Incurred for Riding Transit Without a Ticket in Berlin (Grayson Earle, 2024) {#bvg-fine}
 
-Institutional critique through data manipulation. An intervention hacked the iPads used for the Hans Haacke retrospective survey at the New Museum, injecting hundreds of thousands of falsified entries to protest the museum's union-busting. It pointed at the hypocrisy of an institution displaying leftist critique while suppressing its own workers' rights.
+The same move as Tax Deductible Expenses, run on a single receipt. Caught riding Berlin transit on an expired ticket, fined 60 euros by the BVG. Instead of just paying it, the fine receipt itself was minted as an NFT and listed on SuperRare, which reclassifies it as an artwork, which makes it a deductible business expense under German tax law (Einkommensteuergesetz). The fine pays for itself.
 
----
-
-## Hans Haacke's MoMA Poll (1970) {#haacke-moma-poll}
-
-The analog predecessor to data-driven institutional critique. For the 1970 *Information* exhibition, Haacke asked museum-goers to vote on Governor Rockefeller's failure to denounce Nixon's Indochina policy. Rockefeller was a MoMA board member, so the piece turned audience participation against the institution's own leadership.
+It sold at auction for 0.031 ETH (about $128) and was later exhibited as a large-format print at Dubai Design Week 2024, a bureaucratic penalty on a gallery wall.
 
 ---
 
-## Slow Hot Computer (Sam Lavigne, 2015) {#slow-hot-computer}
+## Hardware {#hardware}
 
-Speculative workplace slacking. A website with one job: make the user's computer run slow and hot by intentionally exhausting system resources. A tool for digital time theft, giving workers an excuse for lowered productivity.
+Five objects, built to be carried out into the world and left there: hidden in a coconut, hidden in a log, worn on a wrist, shaped like a grenade, inflated on a street.
 
 ---
 
-## Sabotage: a brief etymology {#sabotage-etymology}
+## Tripwire (Tad Hirsch, 2006) {#tripwire}
 
-From *sabot*, the wooden clog of the French worker. The story goes that workers threw their clogs into factory machinery to jam the gears and stop production. Historians dispute whether clogs were ever really thrown, but the word stuck: stopping the machine from the inside.
+Automated bureaucratic friction. Made with the Institute for Applied Autonomy for the 2006 01SJ Biennial: custom-built noise sensors, hidden in coconuts, hung in a public park near the San Jose airport. Excessive airplane noise triggered automated phone calls to the airport's complaint line, on behalf of residents and wildlife.
 
-*Redneck*, too, is said to come from a worker's garment, the red bandana coal miners wore as a sign of solidarity in the twentieth century.
+---
+
+## Allison Burtch: Log Jammer (2014) {#log-jammer}
+
+A cellphone signal jammer, built as part of Burtch's ITP thesis, hollowed out and hidden inside a log. It broadcasts noise on the GSM-1900 band to kill cell reception in a small radius, carving out a patch of forest that can't be reached. Where Tripwire hides a sensor in nature to feed a system, Log Jammer hides a jammer in nature to cut one off. Same camouflage, opposite direction.
 
 ---
 
@@ -156,24 +190,24 @@ Defensive tactical architecture. DIY giant silver inflatable cubes used in demon
 
 ---
 
+## Labor {#labor}
+
+Three refusals: refuse full productivity, refuse unwaged work, refuse to let scabs take a struck job.
+
+---
+
+## Slow Hot Computer (Sam Lavigne, 2015) {#slow-hot-computer}
+
+Speculative workplace slacking. A website with one job: make the user's computer run slow and hot by intentionally exhausting system resources. A tool for digital time theft, giving workers an excuse for lowered productivity.
+
+---
+
+## Laurel Ptak: Wages for Facebook (2014) {#wages-for-facebook}
+
+A manifesto, presented as posters, campaign buttons, and an auto-scrolling site at [wagesforfacebook.com](http://wagesforfacebook.com/): "They say it's friendship. We say it's unwaged work. With every like, chat, tag or poke our subjectivity turns them a profit." Ptak took Silvia Federici's 1975 *Wages Against Housework*, the manifesto of the Wages for Housework movement, and found that swapping "Facebook" for "housework" left about 80% of the original text intact. Not a literal demand for payment. A consciousness-raising move that names social media use as labor.
+
+---
+
 ## Kellogg's Hack (Sean Black, @black_madness21, 2021) {#kelloggs-hack}
 
 Algorithmic solidarity and strike defense. During the 2021 Kellogg's strike, a TikTok user wrote a script that automated the creation of fake resumes, flooding the company's job portal and sabotaging its attempt to hire scab labor to replace striking union workers.
-
----
-
-## Workshop: Speculative Tools for Workplace Protest {#workshop}
-
-Developing grassroots sabotage tailored to specific labor issues: wage transparency, inability to unionize. Participants gather (in person or on Zoom) to discuss workplace problems and invent tools to address them. Some projects are speculative, some are very real.
-
-**Favorite idea, the Printer Hack:** hacking office printers so that before any legitimate print job, a sheet of union organizing material prints first, or forcing the printer to output solid black pages to burn through the company's ink budget as a form of financial friction.
-
----
-
-## Themes {#themes}
-
-- **Post-awareness:** stop documenting injustice; start intervening on the systems that produce it.
-- **Distributed participation:** not charity or volunteering, but contributing computing power to do the thing itself (DDoS, crypto mining, data crunching).
-- **Legal framing as artistic strategy:** the "virtual sit-in" precedent protects digital protest by grounding it in civil rights lineage.
-- **Gamification of dissent:** eToy's point system turns spectatorship into collective action.
-- **Speculative tools with real teeth:** from printer hacks to crypto-for-bail pipelines, the line between concept and function is blurred on purpose.
