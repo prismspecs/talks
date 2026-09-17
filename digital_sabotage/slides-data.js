@@ -84,8 +84,6 @@ window.SLIDES = [
   { "kind": "image", "src": "media/first-check.png",
     "caption": "First check cut to BFF, 2017",
     "note": "bail-bloc" },
-  { "kind": "image", "src": "media/bailbloc-nyt.png", "caption": "",
-    "note": "bail-bloc" },
 
   { "kind": "section",
     "title": "Tax Avoidance",
