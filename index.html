@@ -4,35 +4,264 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Talks | Grayson Earle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg: #000;
+    --ink: #e8e8e8;
+    --ink-bright: #fff;
+    --muted: #8a8a8a;
+    --dim: #555;
+    --border: #262626;
+    --border-hover: #444;
+    --card-bg: #080808;
+    --card-hover: #121212;
+    --accent: #ff4d00;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { min-height: 100%; }
+
   body {
-    background: #000;
-    color: #fff;
-    font-family: Helvetica, Arial, sans-serif;
-    min-height: 100vh;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 48px 24px;
+    padding: 64px 24px 80px;
+    position: relative;
+    line-height: 1.5;
   }
-  h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 600; margin-bottom: 40px; letter-spacing: 0.01em; }
-  ul { list-style: none; display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 560px; }
-  li { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border: 1px solid #333; border-radius: 6px; }
-  li:hover { border-color: #666; }
-  li a { color: #fff; text-decoration: none; font-size: 1.15rem; }
-  li .arrow { color: #777; font-size: 1.3rem; }
-  li a:hover { color: #fff; }
+
+  /* top accent line matching deck progress bar */
+  #progress {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    z-index: 20;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 7vw, 4.5rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--ink-bright);
+  }
+
+  .subtitle {
+    margin-top: 14px;
+    font-family: var(--font-mono);
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
+    color: var(--accent);
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+  }
+
+  .talks-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .talk-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 22px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .talk-card:hover {
+    background: var(--card-hover);
+    border-color: var(--border-hover);
+  }
+
+  .talk-card-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .talk-card-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .talk-index {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--dim);
+    transition: color 0.15s ease;
+    flex-shrink: 0;
+  }
+
+  .talk-card:hover .talk-index {
+    color: var(--accent);
+  }
+
+  .talk-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink-bright);
+    letter-spacing: 0.01em;
+  }
+
+  .talk-arrow {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--dim);
+    transition: transform 0.15s ease, color 0.15s ease;
+    flex-shrink: 0;
+  }
+
+  .talk-card:hover .talk-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  .talk-desc {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    color: var(--muted);
+    padding-left: 28px;
+    line-height: 1.45;
+  }
+
+  .talk-meta {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--dim);
+    padding-left: 28px;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+  }
+
+  #wordmark {
+    position: fixed;
+    left: 18px;
+    bottom: 14px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  #hint {
+    position: fixed;
+    right: 16px;
+    bottom: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: #444;
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 48px 16px 56px; }
+    .talk-desc, .talk-meta { padding-left: 0; }
+    #wordmark, #hint { position: static; text-align: center; margin-top: 32px; }
+    #hint { margin-top: 6px; }
+  }
 </style>
 </head>
 <body>
-  <h1>Talks</h1>
-  <ul>
-    <li><a href="digital_sabotage/">Digital Sabotage</a><span class="arrow">→</span></li>
-    <li><a href="sfpc/">Return to Sender: SFPC</a><span class="arrow">→</span></li>
-    <li><a href="in_defense_of_disintegration/">In Defense of Disintegration</a><span class="arrow">→</span></li>
-    <li><a href="what-is-tangible-media/">What is Tangible Media?</a><span class="arrow">→</span></li>
-  </ul>
+  <div id="progress"></div>
+
+  <div class="container">
+    <header>
+      <h1>Talks</h1>
+      <p class="subtitle">slides &amp; presentations</p>
+    </header>
+
+    <ul class="talks-list">
+      <li>
+        <a class="talk-card" href="digital_sabotage/">
+          <div class="talk-card-top">
+            <div class="talk-card-title-group">
+              <span class="talk-index">01</span>
+              <span class="talk-title">Digital Sabotage</span>
+            </div>
+            <span class="talk-arrow">→</span>
+          </div>
+          <p class="talk-desc">Speculative tools for digital monkeywrenching and workplace sabotage.</p>
+          <span class="talk-meta">Akademie Schloss Solitude Web Residency</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="sfpc/">
+          <div class="talk-card-top">
+            <div class="talk-card-title-group">
+              <span class="talk-index">02</span>
+              <span class="talk-title">Return to Sender</span>
+            </div>
+            <span class="talk-arrow">→</span>
+          </div>
+          <p class="talk-desc">Exposing the hidden logistics networks behind Amazon's returns process.</p>
+          <span class="talk-meta">SFPC &amp; ZKU Berlin</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="in_defense_of_disintegration/">
+          <div class="talk-card-top">
+            <div class="talk-card-title-group">
+              <span class="talk-index">03</span>
+              <span class="talk-title">In Defense of Disintegration</span>
+            </div>
+            <span class="talk-arrow">→</span>
+          </div>
+          <p class="talk-desc">A critique of technologically-imposed coherence in artificial intelligence and compression-based systems.</p>
+          <span class="talk-meta">Lecture &amp; sound performance</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="what-is-tangible-media/">
+          <div class="talk-card-top">
+            <div class="talk-card-title-group">
+              <span class="talk-index">04</span>
+              <span class="talk-title">Physical Computing &amp; Tangible Media</span>
+            </div>
+            <span class="talk-arrow">→</span>
+          </div>
+          <p class="talk-desc">Introduction to hardware, sensors, actuators, and interacting with the physical world.</p>
+          <span class="talk-meta">Workshop &amp; lecture</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div id="wordmark">grayson earle</div>
+  <div id="hint">github.com/prismspecs/talks</div>
 </body>
 </html>
