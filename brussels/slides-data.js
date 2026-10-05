@@ -13,8 +13,10 @@ window.SLIDES = [
     "caption": "Installation view at KW Institute for Contemporary Art, Berlin." },
 
   // ---- Bail Bloc ----
+  { "kind": "image", "src": "media/bailbloc-title.png",
+    "caption": "Bail Bloc (2017–2021)" },
   { "kind": "image", "src": "media/bailbloc-tray.png",
-    "caption": "Bail Bloc (2017–2021) mined cryptocurrency in the background of everyday computer use. 100% of funds posted bail." },
+    "caption": "Bail Bloc mined cryptocurrency in the background of everyday computer use. 100% of funds posted bail." },
   { "kind": "image", "src": "media/bailbloc-stats.png",
     "caption": "In the first month, Bail Bloc ran on ~4,000 computers and raised over $3,300." },
 
