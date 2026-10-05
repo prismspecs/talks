@@ -66,7 +66,27 @@
   // slide data can stay plain text instead of carrying pre-built HTML.
   const PY_KEYWORDS = ['def', 'for', 'in', 'with', 'if', 'continue', 'import', 'return', 'while', 'else', 'elif'];
   const PY_BUILTINS = ['range', 'print', 'len', 'open'];
-  function highlightCode(code) {
+  // C-family languages (slide.lang: 'js' or 'c') tokenize in a single pass
+  // so comments and strings can't be re-matched inside inserted spans.
+  const C_KEYWORDS = ['function', 'var', 'let', 'const', 'if', 'else', 'for', 'while', 'return', 'int', 'void', 'include'];
+  const C_TOKEN = new RegExp(
+    '(\\/\\/.*$)|("(?:[^"\\\\]|\\\\.)*"|\'(?:[^\'\\\\]|\\\\.)*\')|\\b(\\d+\\.?\\d*)\\b|\\b(' + C_KEYWORDS.join('|') + ')\\b|\\b([a-zA-Z_]\\w*)(?=\\s*\\()',
+    'gm'
+  );
+  function highlightC(code) {
+    const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    let out = '', last = 0, m;
+    while ((m = C_TOKEN.exec(code))) {
+      out += esc(code.slice(last, m.index));
+      const cls = m[1] || m[2] ? 'code-str' : m[3] ? 'code-num' : m[4] ? 'code-kw' : 'code-fname';
+      out += '<span class="' + cls + '">' + esc(m[0]) + '</span>';
+      last = C_TOKEN.lastIndex;
+    }
+    return out + esc(code.slice(last));
+  }
+
+  function highlightCode(code, lang) {
+    if (lang === 'js' || lang === 'c') return highlightC(code);
     const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     return esc(code)
       .replace(/(#.*)$/gm, '<span class="code-str">$1</span>')
@@ -290,11 +310,12 @@
         stage.append(m);
       } else if (s.kind === 'side') {
         const row = el('div', 'side');
-        s.src.forEach((src) => {
+        s.src.forEach((src, i) => {
           const f = el('div', 'frame');
           const img = document.createElement('img');
           img.src = src;
           f.append(img);
+          if (s.labels && s.labels[i]) f.append(el('div', 'frame-label', s.labels[i]));
           row.append(f);
         });
         stage.append(row);
@@ -346,22 +367,27 @@
         stage.append(wrap);
         captionText = '';
       } else if (s.kind === 'code') {
-        const wrap = el('div', 'code-wrap');
+        // s.blocks renders several snippets side by side; otherwise one from s.code
+        const blocks = s.blocks || [{ code: s.code, filename: s.filename, lang: s.lang }];
+        const wrap = el('div', blocks.length > 1 ? 'code-wrap code-wrap-multi' : 'code-wrap');
         if (s.title) wrap.append(el('div', 'slide-title', s.title));
-        const box = el('div', 'code-container');
-        const header = el('div', 'code-header');
-        const dots = el('div', 'code-dots');
-        dots.append(el('span', 'code-dot red'), el('span', 'code-dot'), el('span', 'code-dot'));
-        header.append(dots);
-        if (s.filename) header.append(el('div', 'code-filename', s.filename));
-        const pre = document.createElement('pre');
-        const codeEl = document.createElement('code');
-        codeEl.innerHTML = highlightCode(s.code || '');
-        pre.append(codeEl);
-        box.append(header, pre);
-        wrap.append(box);
+        const row = el('div', 'code-row');
+        blocks.forEach((b) => {
+          const box = el('div', 'code-container');
+          const header = el('div', 'code-header');
+          const dots = el('div', 'code-dots');
+          dots.append(el('span', 'code-dot red'), el('span', 'code-dot'), el('span', 'code-dot'));
+          header.append(dots);
+          if (b.filename) header.append(el('div', 'code-filename', b.filename));
+          const pre = document.createElement('pre');
+          const codeEl = document.createElement('code');
+          codeEl.innerHTML = highlightCode(b.code || '', b.lang || s.lang);
+          pre.append(codeEl);
+          box.append(header, pre);
+          row.append(box);
+        });
+        wrap.append(row);
         stage.append(wrap);
-        captionText = '';
       } else if (s.kind === 'list') {
         const wrap = el('div', 'list-wrap');
         if (s.title) wrap.append(el('div', 'slide-title', s.title));
