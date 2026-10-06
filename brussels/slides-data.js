@@ -36,9 +36,9 @@ window.SLIDES = [
     "caption": "Programming languages have families. Most of them descend from C." },
   { "kind": "code", "title": "Same idea, different languages",
     "blocks": [
-      { "filename": "hello.c", "lang": "c", "code": "#include <stdio.h>\n\nint main() {\n  printf(\"hello\\n\");\n  return 0;\n}" },
-      { "filename": "hello.py", "code": "print(\"hello\")" },
-      { "filename": "hello.js", "lang": "js", "code": "console.log(\"hello\");" }
+      { "filename": "hello.c", "lang": "c", "code": "#include <stdio.h>\n\nint main() {\n  printf(\"hello world!\\n\");\n  return 0;\n}" },
+      { "filename": "hello.py", "code": "print(\"hello world!\")" },
+      { "filename": "hello.js", "lang": "js", "code": "console.log(\"hello world!\");" }
     ],
     "caption": "p5.js is JavaScript." },
   { "kind": "side", "src": ["media/ide-vscode.png", "media/ide-vim.png", "media/ide-pi.png"],
