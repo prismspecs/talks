@@ -163,7 +163,13 @@
     navSidebar.append(navHeader, navList);
     navOverlay.append(navSidebar);
 
-    document.body.append(progress, stage, caption, controls, wordmark, hint, navOverlay);
+    // lightbox for multi-image slides (side, gallery)
+    const lightbox = el('div'); lightbox.id = 'lightbox';
+    const lbImg = document.createElement('img');
+    const lbCount = el('div', 'lb-count');
+    lightbox.append(lbImg, lbCount);
+
+    document.body.append(progress, stage, caption, controls, wordmark, hint, navOverlay, lightbox);
 
     // optional ambient background audio
     let bgAudioEl = null;
@@ -261,8 +267,27 @@
       });
     }
 
+    // ---- lightbox ----
+    let lbSet = [], lbIdx = 0;
+    function lbShow(i) {
+      lbIdx = (i + lbSet.length) % lbSet.length;
+      lbImg.src = lbSet[lbIdx];
+      lbCount.textContent = lbSet.length > 1 ? (lbIdx + 1) + ' / ' + lbSet.length : '';
+    }
+    function lbOpen(set, i) { lbSet = set; lbShow(i); lightbox.classList.add('open'); }
+    function lbClose() { lightbox.classList.remove('open'); }
+    const lbIsOpen = () => lightbox.classList.contains('open');
+    lightbox.addEventListener('click', lbClose);
+    stage.addEventListener('click', (e) => {
+      const img = e.target.closest('.side img, .gallery img');
+      if (!img) return;
+      const set = Array.from(img.closest('.side, .gallery').querySelectorAll('img'));
+      lbOpen(set.map((n) => n.src), set.indexOf(img));
+    });
+
     // ---- render ----
     function render() {
+      lbClose();
       stage.innerHTML = '';
       const s = slides[idx];
       let captionText = s.caption || '';
@@ -529,6 +554,12 @@
     document.addEventListener('keydown', (e) => {
       const tag = document.activeElement && document.activeElement.tagName;
       const editing = tag === 'INPUT' || tag === 'TEXTAREA' || document.activeElement === caption;
+      if (lbIsOpen()) {
+        if (e.key === 'Escape') lbClose();
+        else if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+        else if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); lbShow(lbIdx + 1); }
+        return;
+      }
       if (e.key === 'Escape') { closeNav(); return; }
       if (editing) return;
       if (e.key === 'ArrowLeft') go(idx - 1);
