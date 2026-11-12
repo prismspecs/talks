@@ -1,7 +1,9 @@
 window.SLIDES = [
   // ---- Bail Bloc ----
   { "kind": "image", "src": "media/bailbloc-title.png",
-    "caption": "Bail Bloc (2017–2021): an app that mined cryptocurrency in the background of everyday computer use. 100% of funds posted bail." },
+    "caption": "Bail Bloc (2017–2021)" },
+  { "kind": "image", "src": "media/bailbloc-tray.png",
+    "caption": "Bail Bloc mined cryptocurrency in the background of everyday computer use. 100% of funds posted bail." },
 
   // ---- Why don't the cops fight each other? ----
   { "kind": "image", "src": "media/cops-screenshot.jpg",
@@ -18,6 +20,10 @@ window.SLIDES = [
   // ---- 00100 ----
   { "kind": "image", "src": "media/00100-installation.jpg",
     "caption": "00100 (2026): a collaborative robot in the front window of Gray Area, San Francisco, raising its middle finger at passersby. Photo: Barak Shrama" },
+  { "kind": "image", "src": "media/00100-visitors.jpg",
+    "caption": "Visitors at the opening watch from inside the window as the arm raises its middle finger toward the street. Photo: Barak Shrama" },
   { "kind": "image", "src": "media/00100-training-grid.jpg",
-    "caption": "The robot's virtual twin training on history's most notorious middle fingers, from 1886 to the 2014 emoji." }
+    "caption": "The robot's virtual twin training on history's most notorious middle fingers, from 1886 to the 2014 emoji." },
+  { "kind": "video", "src": "https://player.vimeo.com/video/1244326617?dnt=1&title=0&byline=0&portrait=0",
+    "caption": "00100 (2026): the virtual twin learning each gesture, intercut with a 2,400-year history of the middle finger." }
 ];
