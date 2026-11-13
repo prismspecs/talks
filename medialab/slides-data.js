@@ -1,4 +1,10 @@
 window.SLIDES = [
+  // ---- The Illuminator ----
+  { "kind": "image", "src": "media/illuminator-van.jpg",
+    "caption": "The Illuminator (2011–ongoing): a guerrilla video projection collective born out of Occupy Wall Street, projecting from the roof of its van." },
+  { "kind": "image", "src": "media/illuminator-guggenheim.jpg",
+    "caption": "Projection on the Guggenheim Museum, New York." },
+
   // ---- Bail Bloc ----
   { "kind": "image", "src": "media/bailbloc-title.png",
     "caption": "Bail Bloc (2017–2021)" },
