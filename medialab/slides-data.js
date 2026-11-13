@@ -16,6 +16,8 @@ window.SLIDES = [
     "caption": "Why don't the cops fight each other? (2023): an attempt to modify the relationships between police officers in Grand Theft Auto V." },
   { "kind": "video", "src": "https://player.vimeo.com/video/871904228",
     "caption": "Why don't the cops fight each other? (2023), video, 9:42" },
+  { "kind": "image", "src": "media/cops-kw.jpg",
+    "caption": "Installation view at KW Institute for Contemporary Art, Berlin." },
 
   // ---- Return to Sender ----
   { "kind": "image", "src": "media/rts-wide-shot-both.jpg",
