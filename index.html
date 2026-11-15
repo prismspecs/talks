@@ -33,8 +33,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 64px 24px 80px;
+    justify-content: flex-start;
+    padding: 64px 24px 100px;
     position: relative;
     line-height: 1.5;
   }
@@ -50,12 +50,12 @@
 
   .container {
     width: 100%;
-    max-width: 680px;
+    max-width: 1140px;
   }
 
   header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
 
   h1 {
@@ -78,35 +78,48 @@
 
   .talks-list {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 18px;
     width: 100%;
+  }
+
+  .talks-list li {
+    display: flex;
   }
 
   .talk-card {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 20px 22px;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 22px;
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 6px;
     text-decoration: none;
     color: var(--ink);
+    width: 100%;
     transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
   }
 
   .talk-card:hover {
     background: var(--card-hover);
     border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+
+  .talk-card-main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .talk-card-top {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    gap: 16px;
+    gap: 12px;
   }
 
   .talk-card-title-group {
@@ -128,10 +141,11 @@
   }
 
   .talk-title {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
     font-weight: 600;
     color: var(--ink-bright);
     letter-spacing: 0.01em;
+    line-height: 1.3;
   }
 
   .talk-arrow {
@@ -164,10 +178,17 @@
     text-transform: lowercase;
   }
 
-  #wordmark {
-    position: fixed;
-    left: 18px;
-    bottom: 14px;
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .wordmark {
     font-family: var(--font-mono);
     font-size: 0.7rem;
     letter-spacing: 0.14em;
@@ -175,21 +196,18 @@
     color: var(--dim);
   }
 
-  #hint {
-    position: fixed;
-    right: 16px;
-    bottom: 10px;
+  .hint {
     font-family: var(--font-mono);
-    font-size: 0.62rem;
+    font-size: 0.65rem;
     color: #444;
     letter-spacing: 0.08em;
   }
 
   @media (max-width: 640px) {
     body { padding: 48px 16px 56px; }
+    .talks-list { grid-template-columns: 1fr; }
     .talk-desc, .talk-meta { padding-left: 0; }
-    #wordmark, #hint { position: static; text-align: center; margin-top: 32px; }
-    #hint { margin-top: 6px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
   }
 </style>
 </head>
@@ -204,92 +222,234 @@
 
     <ul class="talks-list">
       <li>
+        <a class="talk-card" href="whitney/">
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">01</span>
+                <span class="talk-title">What is Crypto?</span>
+              </div>
+              <span class="talk-arrow">→</span>
+            </div>
+            <p class="talk-desc">Weaponizing clicktivism, cryptocurrency mining for bail funds, and radical mutual aid.</p>
+          </div>
+          <span class="talk-meta">The Whitney Museum of American Art · NYC</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="ps1/">
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">02</span>
+                <span class="talk-title">Conversation on Bail Bloc</span>
+              </div>
+              <span class="talk-arrow">→</span>
+            </div>
+            <p class="talk-desc">Software as direct action, plea bargain coercion, and challenging the carceral state.</p>
+          </div>
+          <span class="talk-meta">MoMA PS1 · NYC</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="munich/">
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">03</span>
+                <span class="talk-title">Critical Automation</span>
+              </div>
+              <span class="talk-arrow">→</span>
+            </div>
+            <p class="talk-desc">Politics inscribed into media, machine learning architectures, and forensic video game studies.</p>
+          </div>
+          <span class="talk-meta">HFF Munich (Film &amp; Television) · Germany</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="pioneer_works/">
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">04</span>
+                <span class="talk-title">The Counter-Productivity Suite</span>
+              </div>
+              <span class="talk-arrow">→</span>
+            </div>
+            <p class="talk-desc">Speculative tools for workplace monkeywrenching, worker antagonism, and subverting office surveillance.</p>
+          </div>
+          <span class="talk-meta">Pioneer Works · Software for Artists · NYC</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="moving_image/">
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">05</span>
+                <span class="talk-title">Socialism on the Blockchain</span>
+              </div>
+              <span class="talk-arrow">→</span>
+            </div>
+            <p class="talk-desc">Detourning speculative financial protocols, collective ownership, and ethical smart contracts.</p>
+          </div>
+          <span class="talk-meta">Museum of the Moving Image · Theorizing the Web</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="gray_area/">
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">06</span>
+                <span class="talk-title">Radical Networks &amp; Decarceration</span>
+              </div>
+              <span class="talk-arrow">→</span>
+            </div>
+            <p class="talk-desc">Engineering distributed computing networks as an attack vector against the cash bail system.</p>
+          </div>
+          <span class="talk-meta">Gray Area Festival · San Francisco</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="uniondocs/">
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">07</span>
+                <span class="talk-title">The Illuminator</span>
+              </div>
+              <span class="talk-arrow">→</span>
+            </div>
+            <p class="talk-desc">Guerrilla architectural projection bombing, tactical media, and movement building post-Occupy.</p>
+          </div>
+          <span class="talk-meta">UnionDocs Center for Documentary Art · NYC</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="wordhack/">
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">08</span>
+                <span class="talk-title">Net Art Interventions</span>
+              </div>
+              <span class="talk-arrow">→</span>
+            </div>
+            <p class="talk-desc">Subverting Hans Haacke visitor polls at the New Museum, reverse engineering APIs, and institutional critique.</p>
+          </div>
+          <span class="talk-meta">WordHack · Babycastles · NYC</span>
+        </a>
+      </li>
+
+      <li>
         <a class="talk-card" href="medialab/">
-          <div class="talk-card-top">
-            <div class="talk-card-title-group">
-              <span class="talk-index">01</span>
-              <span class="talk-title">Medialab</span>
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">09</span>
+                <span class="talk-title">Tactical Media Overview</span>
+              </div>
+              <span class="talk-arrow">→</span>
             </div>
-            <span class="talk-arrow">→</span>
+            <p class="talk-desc">The Illuminator, Bail Bloc, Why don't the cops fight each other?, Return to Sender, and 00100.</p>
           </div>
-          <p class="talk-desc">The Illuminator, Bail Bloc, Why don't the cops fight each other?, Return to Sender and 00100.</p>
-          <span class="talk-meta">Short presentation</span>
-        </a>
-      </li>
-
-      <li>
-        <a class="talk-card" href="brussels/">
-          <div class="talk-card-top">
-            <div class="talk-card-title-group">
-              <span class="talk-index">02</span>
-              <span class="talk-title">Creative Coding with p5.js</span>
-            </div>
-            <span class="talk-arrow">→</span>
-          </div>
-          <p class="talk-desc">A short introduction to my work, then a hands-on workshop in the p5.js web editor.</p>
-          <span class="talk-meta">Workshop · Brussels</span>
-        </a>
-      </li>
-
-      <li>
-        <a class="talk-card" href="digital_sabotage/">
-          <div class="talk-card-top">
-            <div class="talk-card-title-group">
-              <span class="talk-index">03</span>
-              <span class="talk-title">Digital Sabotage</span>
-            </div>
-            <span class="talk-arrow">→</span>
-          </div>
-          <p class="talk-desc">Speculative tools for digital monkeywrenching and workplace sabotage.</p>
-          <span class="talk-meta">Akademie Schloss Solitude Web Residency</span>
+          <span class="talk-meta">MIT Media Lab · Cambridge</span>
         </a>
       </li>
 
       <li>
         <a class="talk-card" href="sfpc/">
-          <div class="talk-card-top">
-            <div class="talk-card-title-group">
-              <span class="talk-index">04</span>
-              <span class="talk-title">Return to Sender</span>
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">10</span>
+                <span class="talk-title">Return to Sender</span>
+              </div>
+              <span class="talk-arrow">→</span>
             </div>
-            <span class="talk-arrow">→</span>
+            <p class="talk-desc">Exposing the hidden logistics networks and physical routes behind Amazon's reverse supply chain.</p>
           </div>
-          <p class="talk-desc">Exposing the hidden logistics networks behind Amazon's returns process.</p>
-          <span class="talk-meta">SFPC &amp; ZKU Berlin</span>
+          <span class="talk-meta">School for Poetic Computation &amp; ZK/U Berlin</span>
         </a>
       </li>
 
       <li>
         <a class="talk-card" href="in_defense_of_disintegration/">
-          <div class="talk-card-top">
-            <div class="talk-card-title-group">
-              <span class="talk-index">05</span>
-              <span class="talk-title">In Defense of Disintegration</span>
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">11</span>
+                <span class="talk-title">In Defense of Disintegration</span>
+              </div>
+              <span class="talk-arrow">→</span>
             </div>
-            <span class="talk-arrow">→</span>
+            <p class="talk-desc">A critique of technologically-imposed coherence in artificial intelligence and compression-based systems.</p>
           </div>
-          <p class="talk-desc">A critique of technologically-imposed coherence in artificial intelligence and compression-based systems.</p>
-          <span class="talk-meta">Lecture &amp; sound performance</span>
+          <span class="talk-meta">Lisbon Summer School for the Study of Culture</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="digital_sabotage/">
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">12</span>
+                <span class="talk-title">Digital Sabotage</span>
+              </div>
+              <span class="talk-arrow">→</span>
+            </div>
+            <p class="talk-desc">Speculative tools for digital monkeywrenching and workplace direct action.</p>
+          </div>
+          <span class="talk-meta">Akademie Schloss Solitude Web Residency</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="talk-card" href="brussels/">
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">13</span>
+                <span class="talk-title">Creative Coding with p5.js</span>
+              </div>
+              <span class="talk-arrow">→</span>
+            </div>
+            <p class="talk-desc">An introduction to algorithmic visual art, tactical software, and hands-on p5.js workshop.</p>
+          </div>
+          <span class="talk-meta">Workshop · Brussels</span>
         </a>
       </li>
 
       <li>
         <a class="talk-card" href="what-is-tangible-media/">
-          <div class="talk-card-top">
-            <div class="talk-card-title-group">
-              <span class="talk-index">06</span>
-              <span class="talk-title">Physical Computing &amp; Tangible Media</span>
+          <div class="talk-card-main">
+            <div class="talk-card-top">
+              <div class="talk-card-title-group">
+                <span class="talk-index">14</span>
+                <span class="talk-title">Physical Computing &amp; Tangible Media</span>
+              </div>
+              <span class="talk-arrow">→</span>
             </div>
-            <span class="talk-arrow">→</span>
+            <p class="talk-desc">Introduction to hardware, sensors, actuators, and interacting with the physical world.</p>
           </div>
-          <p class="talk-desc">Introduction to hardware, sensors, actuators, and interacting with the physical world.</p>
           <span class="talk-meta">Workshop &amp; lecture</span>
         </a>
       </li>
     </ul>
-  </div>
 
-  <div id="wordmark">grayson earle</div>
-  <div id="hint">github.com/prismspecs/talks</div>
+    <footer>
+      <div class="wordmark">grayson earle</div>
+      <div class="hint">github.com/prismspecs/talks</div>
+    </footer>
+  </div>
 </body>
 </html>
