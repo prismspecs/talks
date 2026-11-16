@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Talks | Grayson Earle</title>
+<title>Talks &amp; Workshops | Grayson Earle</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -72,6 +72,31 @@
     font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     color: var(--muted);
     letter-spacing: -0.01em;
+  }
+
+  .group + .group {
+    margin-top: 64px;
+  }
+
+  .group-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--ink-bright);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-bright);
+  }
+
+  .group-count {
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    color: var(--dim);
   }
 
   .talks-list {
@@ -230,277 +255,287 @@
 
   <div class="container">
     <header>
-      <h1>Talks</h1>
+      <h1>Talks &amp; Workshops</h1>
       <p class="subtitle">slides &amp; presentations</p>
     </header>
 
-    <ul class="talks-list">
-      <li>
-        <a class="talk-card" href="medialab/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">01</span>
-                <span class="talk-title">Medialab</span>
+    <!-- groups:start -->
+    <section class="group" aria-labelledby="group-talks">
+      <h2 class="group-title" id="group-talks"><span>Talks</span><span class="group-count">11</span></h2>
+      <ul class="talks-list">
+        <li>
+          <a class="talk-card" href="medialab/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">01</span>
+                  <span class="talk-title">Medialab</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">The Illuminator, Bail Bloc, Why don’t the cops fight each other?, Return to Sender and 00100.</p>
             </div>
-            <p class="talk-desc">The Illuminator, Bail Bloc, Why don’t the cops fight each other?, Return to Sender and 00100.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">Short presentation</span>
-            <span class="talk-year">2026</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">Short presentation</span>
+              <span class="talk-year">2026</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="brussels/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">02</span>
-                <span class="talk-title">Creative Coding with p5.js</span>
+        <li>
+          <a class="talk-card" href="sfpc/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">02</span>
+                  <span class="talk-title">Return to Sender</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">Exposing the hidden logistics networks behind Amazon’s returns process.</p>
             </div>
-            <p class="talk-desc">A short introduction to my work, then a hands-on workshop in the p5.js web editor.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">Workshop · Brussels</span>
-            <span class="talk-year">2026</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">SFPC &amp; ZKU Berlin</span>
+              <span class="talk-year">2026</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="sfpc/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">03</span>
-                <span class="talk-title">Return to Sender</span>
+        <li>
+          <a class="talk-card" href="in_defense_of_disintegration/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">03</span>
+                  <span class="talk-title">In Defense of Disintegration</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">A critique of technologically-imposed coherence in artificial intelligence and compression-based systems.</p>
             </div>
-            <p class="talk-desc">Exposing the hidden logistics networks behind Amazon’s returns process.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">SFPC &amp; ZKU Berlin</span>
-            <span class="talk-year">2026</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">XVI Lisbon Summer School for the Study of Culture · Portugal</span>
+              <span class="talk-year">2026</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="in_defense_of_disintegration/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">04</span>
-                <span class="talk-title">In Defense of Disintegration</span>
+        <li>
+          <a class="talk-card" href="aalto/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">04</span>
+                  <span class="talk-title">Art &amp; Intervention</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">The Illuminator, Tax Evaders, Undocumenta, Why don’t the cops fight each other?, Bail Bloc, the Hans Haacke hack, Inference Engine and Scrivener.</p>
             </div>
-            <p class="talk-desc">A critique of technologically-imposed coherence in artificial intelligence and compression-based systems.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">XVI Lisbon Summer School for the Study of Culture · Portugal</span>
-            <span class="talk-year">2026</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">Aalto University · Finland</span>
+              <span class="talk-year">2025</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="aalto/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">05</span>
-                <span class="talk-title">Art &amp; Intervention</span>
+        <li>
+          <a class="talk-card" href="munich/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">05</span>
+                  <span class="talk-title">Critical Automation</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">The politics built into technology at three layers (material, architecture, information) and the artworks that intervene in each.</p>
             </div>
-            <p class="talk-desc">The Illuminator, Tax Evaders, Undocumenta, Why don’t the cops fight each other?, Bail Bloc, the Hans Haacke hack, Inference Engine and Scrivener.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">Aalto University · Finland</span>
-            <span class="talk-year">2025</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">University of Television and Film Munich · Germany</span>
+              <span class="talk-year">2024</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="munich/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">06</span>
-                <span class="talk-title">Critical Automation</span>
+        <li>
+          <a class="talk-card" href="wordhack/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">06</span>
+                  <span class="talk-title">WordHack / Artists for Workers</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">Hacking the New Museum’s Hans Haacke survey after the museum union-busted its staff, newmuseum.net and guggenhiem.net.</p>
             </div>
-            <p class="talk-desc">The politics built into technology at three layers (material, architecture, information) and the artworks that intervene in each.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">University of Television and Film Munich · Germany</span>
-            <span class="talk-year">2024</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">WordHack · Babycastles · NYC</span>
+              <span class="talk-year">2020</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="wordhack/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">07</span>
-                <span class="talk-title">WordHack / Artists for Workers</span>
+        <li>
+          <a class="talk-card" href="pioneer_works/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">07</span>
+                  <span class="talk-title">Software for Artists</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">Modding the police in GTA V, then the Counter-Productivity Suite: tools for sabotage and workplace organizing.</p>
             </div>
-            <p class="talk-desc">Hacking the New Museum’s Hans Haacke survey after the museum union-busted its staff, newmuseum.net and guggenhiem.net.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">WordHack · Babycastles · NYC</span>
-            <span class="talk-year">2020</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">Pioneer Works · NYC</span>
+              <span class="talk-year">2020</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="pioneer_works/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">08</span>
-                <span class="talk-title">Software for Artists</span>
+        <li>
+          <a class="talk-card" href="whitney/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">08</span>
+                  <span class="talk-title">Bail Bloc</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">A computer program that mines cryptocurrency in the background to bail people out of jail, made with The New Inquiry.</p>
             </div>
-            <p class="talk-desc">Modding the police in GTA V, then the Counter-Productivity Suite: tools for sabotage and workplace organizing.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">Pioneer Works · NYC</span>
-            <span class="talk-year">2020</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">Whitney Museum · MoMA PS1 · Gray Area Festival · Radical Networks</span>
+              <span class="talk-year">2018–19</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="whitney/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">09</span>
-                <span class="talk-title">Bail Bloc</span>
+        <li>
+          <a class="talk-card" href="moving_image/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">09</span>
+                  <span class="talk-title">Socialism on the Blockchain</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">What would a technologically engaged socialist intervention on cryptocurrency look like?</p>
             </div>
-            <p class="talk-desc">A computer program that mines cryptocurrency in the background to bail people out of jail, made with The New Inquiry.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">Whitney Museum · MoMA PS1 · Gray Area Festival · Radical Networks</span>
-            <span class="talk-year">2018–19</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">Theorizing the Web · Museum of the Moving Image · NYC</span>
+              <span class="talk-year">2018</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="moving_image/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">10</span>
-                <span class="talk-title">Socialism on the Blockchain</span>
+        <li>
+          <a class="talk-card" href="caa/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">10</span>
+                  <span class="talk-title">Beyond Surveillance Subjectivity</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">NSA Game, Poemecia and Bail Bloc: jamming the surveillance apparatus and implicating the viewer.</p>
             </div>
-            <p class="talk-desc">What would a technologically engaged socialist intervention on cryptocurrency look like?</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">Theorizing the Web · Museum of the Moving Image · NYC</span>
-            <span class="talk-year">2018</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">College Art Association, “Aesthetics and Control” · Los Angeles</span>
+              <span class="talk-year">2018</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="what-is-tangible-media/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">11</span>
-                <span class="talk-title">Physical Computing &amp; Tangible Media</span>
+        <li>
+          <a class="talk-card" href="rutgers/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">11</span>
+                  <span class="talk-title">Beyond Clicktivism</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">Hacking social structures: Free Toilet NYC, The Illuminator in Montreal, the Snowden projection, NSA Game and the idea behind Bail Bloc.</p>
             </div>
-            <p class="talk-desc">Introduction to hardware, sensors, actuators, and interacting with the physical world.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">Workshop &amp; lecture</span>
-            <span class="talk-year">2018</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">Rutgers University · New Jersey</span>
+              <span class="talk-year">2017</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
 
-      <li>
-        <a class="talk-card" href="caa/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">12</span>
-                <span class="talk-title">Beyond Surveillance Subjectivity</span>
+    <section class="group" aria-labelledby="group-workshops">
+      <h2 class="group-title" id="group-workshops"><span>Workshops</span><span class="group-count">03</span></h2>
+      <ul class="talks-list">
+        <li>
+          <a class="talk-card" href="brussels/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">01</span>
+                  <span class="talk-title">Creative Coding with p5.js</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">A short introduction to my work, then a hands-on workshop in the p5.js web editor.</p>
             </div>
-            <p class="talk-desc">NSA Game, Poemecia and Bail Bloc: jamming the surveillance apparatus and implicating the viewer.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">College Art Association, “Aesthetics and Control” · Los Angeles</span>
-            <span class="talk-year">2018</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">Workshop · Brussels</span>
+              <span class="talk-year">2026</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="rutgers/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">13</span>
-                <span class="talk-title">Beyond Clicktivism</span>
+        <li>
+          <a class="talk-card" href="what-is-tangible-media/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">02</span>
+                  <span class="talk-title">Physical Computing &amp; Tangible Media</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">Introduction to hardware, sensors, actuators, and interacting with the physical world.</p>
             </div>
-            <p class="talk-desc">Hacking social structures: Free Toilet NYC, The Illuminator in Montreal, the Snowden projection, NSA Game and the idea behind Bail Bloc.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">Rutgers University · New Jersey</span>
-            <span class="talk-year">2017</span>
-          </div>
-        </a>
-      </li>
+            <div class="talk-meta-row">
+              <span class="talk-meta">Workshop &amp; lecture</span>
+              <span class="talk-year">2018</span>
+            </div>
+          </a>
+        </li>
 
-      <li>
-        <a class="talk-card" href="digital_sabotage/">
-          <div class="talk-card-main">
-            <div class="talk-card-top">
-              <div class="talk-card-title-group">
-                <span class="talk-index">14</span>
-                <span class="talk-title">Digital Sabotage</span>
+        <li>
+          <a class="talk-card" href="digital_sabotage/">
+            <div class="talk-card-main">
+              <div class="talk-card-top">
+                <div class="talk-card-title-group">
+                  <span class="talk-index">03</span>
+                  <span class="talk-title">Digital Sabotage</span>
+                </div>
+                <span class="talk-arrow">→</span>
               </div>
-              <span class="talk-arrow">→</span>
+              <p class="talk-desc">Speculative tools for digital monkeywrenching and workplace sabotage.</p>
             </div>
-            <p class="talk-desc">Speculative tools for digital monkeywrenching and workplace sabotage.</p>
-          </div>
-          <div class="talk-meta-row">
-            <span class="talk-meta">Akademie Schloss Solitude Web Residency</span>
-            <span class="talk-year"></span>
-          </div>
-        </a>
-      </li>
-    </ul>
+            <div class="talk-meta-row">
+              <span class="talk-meta">Akademie Schloss Solitude Web Residency</span>
+              <span class="talk-year"></span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- groups:end -->
 
     <footer>
       <div class="wordmark">grayson earle</div>
