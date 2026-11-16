@@ -1,60 +1,111 @@
 window.SLIDES = [
   {
     "kind": "cover",
-    "title": "What is Crypto? Weaponizing Clicktivism",
-    "subtitle": "Bail Bloc, Volunteer Computing, and Social Justice",
-    "byline": "The Whitney Museum of American Art · New York City"
+    "title": "What is Crypto?",
+    "subtitle": "Bail Bloc, Volunteer Computing, and Radical Networks",
+    "byline": "Grayson Earle · The Whitney Museum of American Art, 2018"
   },
   {
-    "kind": "quote",
-    "title": "The Question",
-    "quote": "How can we weaponize clicktivism such that it produces material resources for radical political causes?",
-    "attribution": "Grayson Earle"
+    "kind": "section",
+    "title": "A Brief History of Money",
+    "sub": "from commodity to abstraction"
   },
   {
-    "kind": "image",
-    "src": "media/slide-seti.png",
-    "caption": "SETI@home (1999): an early inspiration for distributed volunteer computing using latent CPU capacity."
+    "kind": "list",
+    "title": "What is a Bank? What is Money?",
+    "items": [
+      "Money functions as an abstract medium of exchange for human labor.",
+      "Banks guard, insure, and lend capital—investing customer deposits rather than holding cash locally.",
+      "2008 Financial Collapse: banks took systemic speculative risks, resulting in public bailouts funded by taxpayer debt."
+    ]
   },
   {
-    "kind": "text",
-    "title": "A Distributed Financial Attack Vector",
-    "sub": "From cryptocurrency speculation to decarceration",
-    "body": [
-      "Cryptocurrency mining pools verify distributed ledgers through cryptographic proof-of-work.",
-      "Rather than mining for individual speculative gain, Bail Bloc pooled volunteer computational power.",
-      "100% of the mined cryptocurrency (Monero) was liquidated each month and donated directly to the Bronx Freedom Fund."
+    "kind": "list",
+    "title": "What is a Blockchain?",
+    "items": [
+      "An immutable, append-only cryptographic ledger upkept by anyone who participates in the network.",
+      "Replaces centralized financial gatekeepers with distributed cryptographic consensus."
+    ]
+  },
+  {
+    "kind": "list",
+    "title": "Who Labors to Maintain the Record?",
+    "items": [
+      "If automation replaces blue-collar jobs with machines, blockchain replaces white-collar ledger keepers with machines.",
+      "Running software on a computer verifies transactions across the network—a process known as 'mining'."
     ]
   },
   {
     "kind": "image",
-    "src": "media/system_tray.png",
-    "caption": "Bail Bloc operating discreetly in the operating system tray with background CPU priority."
+    "src": "media/slide-seti.png",
+    "caption": "Inspiration: SETI@home (1999) pooled latent CPU cycles across millions of volunteer computers into a global supercomputer."
+  },
+  {
+    "kind": "list",
+    "title": "My Bitcoin Mining Experiment (2010)",
+    "items": [
+      "Managing a university computer lab in 2010.",
+      "Ran experimental mining scripts on idle workstations during off-hours, earning early Bitcoin.",
+      "Takeaway: latent computational energy can be redirected to generate material resources."
+    ]
+  },
+  {
+    "kind": "section",
+    "title": "The Cash Bail Crisis",
+    "sub": "incarceration before conviction"
+  },
+  {
+    "kind": "list",
+    "title": "What is Bail? Why is it Unjust?",
+    "items": [
+      "Bail is cash paid to remain free while awaiting trial—categorically, before any conviction.",
+      "Impoverished defendants cannot afford bail and are coerced into taking plea bargains.",
+      "Conviction rate for people released pretrial: 50%. For those detained pretrial: 92%.",
+      "In essence: defendants are found guilty of poverty."
+    ]
+  },
+  {
+    "kind": "list",
+    "title": "The System Isn't Broken, It's Rigged",
+    "items": [
+      "The court system assumes most people cannot afford trial and will plead out.",
+      "If everyone in America had the resources to pay bail, the court system would collapse under its own weight.",
+      "This creates an attack vector: can we weaponize idle computing power to pay bail?"
+    ]
   },
   {
     "kind": "image",
     "src": "media/bail-bloc-website.png",
-    "caption": "The Bail Bloc application download portal, making political participation accessible to anyone with a laptop."
+    "caption": "Bail Bloc: a downloadable application that mines cryptocurrency in the background of everyday computer use."
+  },
+  {
+    "kind": "image",
+    "src": "media/system_tray.png",
+    "caption": "Operating silently in the macOS system tray at low priority."
   },
   {
     "kind": "image",
     "src": "media/stats.png",
-    "caption": "4,000+ volunteer nodes deployed within the first month, generating immediate funding for bail relief."
+    "caption": "First month operations: 4,000+ volunteer nodes deployed, raising thousands of dollars."
   },
   {
     "kind": "image",
     "src": "media/bff_tweet.png",
-    "caption": "The Bronx Freedom Fund posting bail, keeping individuals out of Rikers Island while awaiting trial."
+    "caption": "100% of proceeds liquidated to USD and donated to the Bronx Freedom Fund to secure immediate pretrial release."
   },
   {
-    "kind": "image",
-    "src": "media/whitney-talk.png",
-    "caption": "Grayson Earle presenting at The Whitney Museum of American Art."
+    "kind": "section",
+    "title": "Socialism on the Blockchain",
+    "sub": "inscribing ethics into immutable protocols"
   },
   {
-    "kind": "quote",
-    "title": "Beyond Tech-Hype",
-    "quote": "What would a truly revolutionary financial system look like? One that considers reparations as a basic assumption and inscribes ethics into immutable systems.",
-    "attribution": "Whitney Museum Presentation"
+    "kind": "list",
+    "title": "Beyond Silicon Valley Solutionism",
+    "items": [
+      "What would a radical financial protocol look like?",
+      "terra0: smart contracts granted to an autonomous forest to buy its own land in perpetuity.",
+      "Doma City: tenant tokens that turn rent into collective property equity without banks.",
+      "Inscribing labor ethics and reparations into base-layer protocol assumptions."
+    ]
   }
 ];
