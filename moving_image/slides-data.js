@@ -1,50 +1,39 @@
+// Socialism on the Blockchain. Theorizing the Web, Museum of the Moving Image (2018).
+// No slide file survives. Slides follow the "(slide)" cues in the talk text
+// (socialism-blockchain.odt) and use the two images saved for it (edu/talks/TtW);
+// the ledger and smart-contract slides are the ones from Beyond Clicktivism (2017).
 window.SLIDES = [
-  {
-    "kind": "cover",
-    "title": "Socialism on the Blockchain",
-    "subtitle": "Detourning Speculative Protocols for Radical Mutual Aid",
-    "byline": "Museum of the Moving Image · Theorizing the Web · NYC"
-  },
-  {
-    "kind": "quote",
-    "title": "Silicon Valley's Revolution",
-    "quote": "The claim that cryptocurrency is inherently revolutionary is only true by the standards of Silicon Valley tech-pushers. How can this be revolutionary if it enriches the exact same cast of characters?",
-    "attribution": "Museum of the Moving Image Presentation"
-  },
-  {
-    "kind": "image",
-    "src": "media/blocchainpropoganda.png",
-    "caption": "The visual rhetoric and speculative propaganda of early cryptocurrency culture."
-  },
-  {
-    "kind": "image",
-    "src": "media/bitcoin2010.png",
-    "caption": "Mining Bitcoin in 2010: early experiments in running autonomous nodes in university computer labs."
-  },
-  {
-    "kind": "text",
-    "title": "What Would a Radical Ledger Look Like?",
-    "sub": "Inscribing socialist ethics into consensus mechanisms",
+  { "kind": "cover", "title": "Socialism on the Blockchain",
+    "byline": "Grayson Earle · Theorizing the Web, Museum of the Moving Image, 2018" },
+  { "kind": "image", "src": "media/bloc-chain.jpg", "caption": "" },
+
+  // ---- Bail Bloc ----
+  { "kind": "image", "src": "media/seti.png",
+    "caption": "SETI@home (1999): an application that enlisted latent compute power in volunteers' home computers to create an ad hoc supercomputer" },
+  { "kind": "image", "src": "media/bitcoin-2010.jpg",
+    "caption": "In 2010, while overseeing a computer lab at my university, I learned about Bitcoin" },
+  { "kind": "image", "src": "media/bailbloc-site.png",
+    "caption": "Bail Bloc works much like SETI@home; participants can download an application that runs in the background of everyday computer use",
+    "link": "https://bailbloc.thenewinquiry.com" },
+  { "kind": "image", "src": "media/bailbloc-menu.png",
+    "caption": "A coordinated \"mining pool\" gives each machine running Bail Bloc a list of transactions to solve" },
+  { "kind": "image", "src": "media/bailbloc-stats.png",
+    "caption": "We then trade Monero for US Dollars and cut a check for the entire amount generated to our partners at the Bronx Freedom Fund" },
+  { "kind": "image", "src": "media/bff-tweet.png",
+    "caption": "On Christmas day, after 5 weeks of the project running, we cut a check for $3333.77 to the Bronx Freedom Fund" },
+
+  // ---- Smart contracts ----
+  { "kind": "code", "title": "the bitcoin blockchain", "filename": "a list of transactions", "lang": "js",
+    "code": "matt(5.0BTC) -> 1.2BTC -> sarah(1.2BTC)\nsarah(1.2BTC) -> 0.1BTC -> kaz(54.1BTC)\nsteve(3.2BTC) -> ..." },
+  { "kind": "code", "title": "Smart Contracts", "lang": "js",
+    "code": "if (no_contract && date > May1) then strike\n\nif (avg(menSalary) > avg(womenSalary)) then womenSalary++" },
+  { "kind": "text", "title": "What sorts of smart contracts would an international workers party write?",
     "body": [
-      "A financial protocol that builds reparations in as an immutable base-layer assumption.",
-      "Smart contracts that programmatically detect and correct for gendered and racial wage discrepancies.",
-      "Redirecting capital gains and unearned inheritance directly toward public education, healthcare, and housing."
-    ]
-  },
-  {
-    "kind": "text",
-    "title": "Precedents & Counter-Models",
-    "sub": "Autonomous forests & cooperative housing",
-    "body": [
-      "terra0: granting smart contracts to a forest so it can sustainably log itself and purchase its own land into perpetuity.",
-      "Doma City: issuing tokens to renters so monthly rent accumulates fluid community equity rather than enriching predatory landlords.",
-      "Bail Bloc: redistributing computational power directly into the liberation of incarcerated people."
-    ]
-  },
-  {
-    "kind": "quote",
-    "title": "The Core Horizon",
-    "quote": "The true promise of decentralized networks is not creating digital scarcity, but building non-extractive structures that resist the domination of existing capital.",
-    "attribution": "Grayson Earle"
-  }
+      "Could we end the wage gap?",
+      "Could we pay reparations?",
+      "Why is that not a basic assumption of this new financial technology?"
+    ] },
+  { "kind": "links", "title": "how could a forest buy itself back?", "items": [
+    { "label": "terra0.org", "url": "http://www.terra0.org/" }
+  ] }
 ];
