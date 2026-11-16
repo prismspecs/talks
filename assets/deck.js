@@ -108,10 +108,6 @@
     const progress = el('div'); progress.id = 'progress';
     const stage = el('div'); stage.id = 'stage';
     const caption = el('div'); caption.id = 'caption';
-    if (config.editableCaptions) {
-      caption.contentEditable = 'true';
-      caption.spellcheck = false;
-    }
 
     const controls = el('div'); controls.id = 'controls';
     const btnHome = el('button');
@@ -146,9 +142,10 @@
     controls.append(btnFullscreen);
 
     const wordmark = el('div', null, talkTitle.toLowerCase()); wordmark.id = 'wordmark';
-    const hint = el('div', null, config.editableCaptions
-      ? '←/→ navigate · space next · f fullscreen · double-click caption to edit'
-      : '←/→ navigate · space next · f fullscreen' + (config.notes ? ' · n notes' : ''));
+    const hintParts = ['←/→ navigate', 'space next', 'f fullscreen'];
+    if (config.notes) hintParts.push('n notes');
+    if (config.editableCaptions) hintParts.push('double-click caption to edit');
+    const hint = el('div', null, hintParts.join(' · '));
     hint.id = 'hint';
 
     // slide navigator sidebar
@@ -212,7 +209,8 @@
     function slideLabel(s, i) {
       if (s.title) return s.title;
       if (s.caption) return s.caption.split(' (')[0];
-      if (s.quote) return s.quote.slice(0, 48) + (s.quote.length > 48 ? '…' : '');
+      const long = s.quote || s.lead;
+      if (long) return long.slice(0, 48) + (long.length > 48 ? '…' : '');
       return (s.kind || 'slide') + ' ' + (i + 1);
     }
 
@@ -254,18 +252,126 @@
       if (split !== -1) caption.append(el('span', 'detail', text.slice(split)));
     }
 
+    // Caption edits stay in the viewer's browser. Each edit is keyed by what the
+    // slide shows (its media, else its title) and stored with the published
+    // caption it replaced, so it only applies while that slide still carries
+    // that caption: reordering the deck or changing a caption in slides-data.js
+    // retires the edit instead of moving it onto another slide. (The original
+    // '<key>-captions' store was keyed by slide position, which is how a
+    // reorder put one slide's caption on another; it is ignored, not deleted.)
+    const CAPTIONS_KEY = storageKey + '-captions-v2';
+    let publishedCaption = '';
+
+    function slideKey(s) {
+      const src = Array.isArray(s.src) ? s.src.join('|') : s.src;
+      return (s.kind || 'slide') + ':' + (src || s.title || s.caption || '');
+    }
     function captionStorage() {
-      try { return JSON.parse(localStorage.getItem(storageKey + '-captions') || '{}'); }
+      try { return JSON.parse(localStorage.getItem(CAPTIONS_KEY) || '{}') || {}; }
       catch (e) { return {}; }
+    }
+    function captionEdit(s, published) {
+      const e = captionStorage()[slideKey(s)];
+      return e && e.from === published ? e.text : null;
     }
 
     if (config.editableCaptions) {
+      // Double-click to edit; single clicks keep working on caption links.
+      caption.title = 'Double-click to edit';
+      caption.addEventListener('dblclick', () => {
+        if (caption.isContentEditable) return;
+        caption.contentEditable = 'true';
+        caption.spellcheck = false;
+        caption.focus();
+      });
+      caption.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') { e.preventDefault(); caption.blur(); }
+        else if (e.key === 'Escape') { e.preventDefault(); caption.dataset.cancel = '1'; caption.blur(); }
+      });
       caption.addEventListener('blur', () => {
-        const saved = captionStorage();
-        saved[idx] = caption.textContent;
-        localStorage.setItem(storageKey + '-captions', JSON.stringify(saved));
+        if (!caption.isContentEditable) return;
+        caption.contentEditable = 'false';
+        const s = slides[idx];
+        if (caption.dataset.cancel) {
+          delete caption.dataset.cancel;
+        } else {
+          const text = caption.textContent.trim();
+          const saved = captionStorage();
+          if (text === publishedCaption) delete saved[slideKey(s)];
+          else saved[slideKey(s)] = { from: publishedCaption, text };
+          try { localStorage.setItem(CAPTIONS_KEY, JSON.stringify(saved)); } catch (e) { /* storage unavailable */ }
+        }
+        const edit = captionEdit(s, publishedCaption);
+        setCaption(edit !== null ? edit : publishedCaption, s.link);
+        fitStage();
       });
     }
+
+    // ---- keep the slide inside the stage ----
+    // Slide type is sized off the viewport width, so a long title or quote on a
+    // short window (a 1280x720 projector, a laptop with browser chrome) can be
+    // taller than the stage. When content doesn't fit, scale it down to fit and
+    // centre it; below MIN_FIT it would be unreadable, so the stage scrolls
+    // instead of cutting anything off.
+    const MIN_FIT = 0.6;
+    let fitQueued = false;
+    function fitStage() {
+      const wrap = stage.firstElementChild;
+      if (!wrap) return;
+      wrap.style.transform = '';
+      wrap.style.transformOrigin = '';
+      stage.classList.remove('scroll');
+      const sr = stage.getBoundingClientRect();
+      const cs = getComputedStyle(stage);
+      const top = sr.top + parseFloat(cs.paddingTop);
+      const bottom = sr.bottom - parseFloat(cs.paddingBottom);
+      let t = Infinity, b = -Infinity, l = Infinity, r = -Infinity;
+      [wrap, ...wrap.querySelectorAll('*')].forEach((n) => {
+        const q = n.getBoundingClientRect();
+        if (!q.width || !q.height) return;
+        if (q.top < t) t = q.top;
+        if (q.bottom > b) b = q.bottom;
+        if (q.left < l) l = q.left;
+        if (q.right > r) r = q.right;
+      });
+      if (t === Infinity) return;
+      const vw = document.documentElement.clientWidth;
+      if (t >= top - 0.5 && b <= bottom + 0.5 && l >= -0.5 && r <= vw + 0.5) return;
+      const scale = Math.min(1, (bottom - top) / (b - t), vw / (r - l));
+      if (scale < MIN_FIT) { stage.classList.add('scroll'); return; }
+      const wr = wrap.getBoundingClientRect();
+      const cx = (l + r) / 2, cy = (t + b) / 2;
+      wrap.style.transformOrigin = (cx - wr.left) + 'px ' + (cy - wr.top) + 'px';
+      wrap.style.transform = 'translate(' + (vw / 2 - cx) + 'px,' + ((top + bottom) / 2 - cy) + 'px) scale(' + scale + ')';
+    }
+    function queueFit() {
+      if (fitQueued) return;
+      fitQueued = true;
+      requestAnimationFrame(() => { fitQueued = false; fitStage(); });
+    }
+    // The hint and wordmark sit in the bottom corners; on narrower windows, or
+    // with extra buttons (notes), they run into the centred controls. Hide
+    // whichever one would touch them.
+    function clearCorners() {
+      const ctl = Array.from(controls.children).map((c) => c.getBoundingClientRect());
+      [hint, wordmark].forEach((n) => {
+        n.style.visibility = '';
+        const r = n.getBoundingClientRect();
+        if (!r.width) return;
+        if (ctl.some((c) => c.width && r.left < c.right + 12 && c.left - 12 < r.right && r.top < c.bottom && c.top < r.bottom)) {
+          n.style.visibility = 'hidden';
+        }
+      });
+    }
+    window.addEventListener('resize', clearCorners);
+    if (document.fonts) document.fonts.ready.then(clearCorners);
+    clearCorners();
+
+    stage.addEventListener('load', queueFit, true);
+    stage.addEventListener('loadedmetadata', queueFit, true);
+    window.addEventListener('resize', queueFit);
+    document.addEventListener('fullscreenchange', queueFit);
+    if (document.fonts) document.fonts.ready.then(queueFit);
 
     // ---- lightbox ----
     let lbSet = [], lbIdx = 0;
@@ -387,6 +493,8 @@
         const bq = document.createElement('blockquote');
         if (s.quoteHtml) bq.innerHTML = s.quoteHtml;
         else bq.textContent = s.quote;
+        // paragraph-length quotes get reading size instead of display size
+        if (bq.textContent.length > 600) wrap.classList.add('long');
         wrap.append(bq);
         if (s.attribution) wrap.append(el('div', 'quote-attribution', s.attribution));
         stage.append(wrap);
@@ -416,6 +524,7 @@
       } else if (s.kind === 'list') {
         const wrap = el('div', 'list-wrap');
         if (s.title) wrap.append(el('div', 'slide-title', s.title));
+        if (s.lead) wrap.append(el('p', 'list-lead', s.lead));
         const ul = document.createElement('ul');
         (s.items || []).forEach((it) => {
           const li = document.createElement('li');
@@ -483,12 +592,11 @@
         stage.append(wrap);
       }
 
-      if (config.editableCaptions) {
-        const saved = captionStorage();
-        setCaption(saved[idx] !== undefined ? saved[idx] : captionText);
-      } else {
-        setCaption(captionText, s.link);
-      }
+      publishedCaption = captionText;
+      caption.contentEditable = 'false';
+      const edit = config.editableCaptions ? captionEdit(s, captionText) : null;
+      setCaption(edit !== null ? edit : captionText, s.link);
+      fitStage();
 
       counter.textContent = (idx + 1) + ' / ' + slides.length;
       progress.style.width = ((idx + 1) / slides.length * 100) + '%';

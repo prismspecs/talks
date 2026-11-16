@@ -28,13 +28,13 @@ window.SLIDES = [
     { "body": "$100,000 - 500,000" }, { "body": "$500,000 - 1,000,000" },
     { "body": "$1,000,000 - 10,000,000" }, { "body": "More than $10,000,000" }
   ] },
-  { "kind": "list", "title": "8. Do you think sponsorship of art exhibitions by banks and corporations has an effect on the kind of exhibitions art institutions present and what is included or omitted from them?", "items": [
+  { "kind": "list", "lead": "8. Do you think sponsorship of art exhibitions by banks and corporations has an effect on the kind of exhibitions art institutions present and what is included or omitted from them?", "items": [
     { "body": "Yes, a lot" }, { "body": "Yes, somewhat" }, { "body": "No" }, { "body": "No opinion" }
   ] },
-  { "kind": "list", "title": "11. Scientists warn that climate change will have devastating global consequences unless drastic measures are taken immediately to prevent them. Do you think business and political leaders are doing what is needed?", "items": [
+  { "kind": "list", "lead": "11. Scientists warn that climate change will have devastating global consequences unless drastic measures are taken immediately to prevent them. Do you think business and political leaders are doing what is needed?", "items": [
     { "body": "Yes" }, { "body": "Yes, but not enough" }, { "body": "No" }, { "body": "Don't know" }
   ] },
-  { "kind": "list", "title": "14. A global wealth report of 2013 by Credit Suisse, a major Swiss Bank, stated: \"...the lower half of the global population collectively own less than 1% of global wealth, while the richest 10% of adults own 87% of all wealth, and the top 1% account for almost half of all assets in the world.\" What is your opinion of this?", "items": [
+  { "kind": "list", "lead": "14. A global wealth report of 2013 by Credit Suisse, a major Swiss Bank, stated: \"...the lower half of the global population collectively own less than 1% of global wealth, while the richest 10% of adults own 87% of all wealth, and the top 1% account for almost half of all assets in the world.\" What is your opinion of this?", "items": [
     { "body": "Such inequality needs to be corrected" },
     { "body": "Accumulation of wealth should not be interfered with" },
     { "body": "Don't know" }

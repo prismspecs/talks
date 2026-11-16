@@ -35,7 +35,7 @@ window.SLIDES = [
 
   // ---- Prototypes ----
   { "kind": "section", "title": "Prototypes" },
-  { "kind": "text", "title": "WiFi jammer",
+  { "kind": "text", "prose": true, "title": "WiFi jammer",
     "body": [
       "A device that brings down any WiFi network in an office.",
       "The political-historical trajectory of the clog could be contemporaneously imagined as a pair of shoes with the requisite electronics hidden in the sole, granting any employee the ability to disable a wireless network simply by walking into the workplace."
@@ -57,7 +57,7 @@ window.SLIDES = [
     "caption": "newmuseum.net (Artists for Workers)", "link": "https://newmuseum.net/" },
 
   // ---- Next ----
-  { "kind": "text", "title": "Mapping the workplace",
+  { "kind": "text", "prose": true, "title": "Mapping the workplace",
     "body": [
       "Draw out the various areas of the workplace, the offices upstairs, the custodial closet, the boss's corner office, and who works in each area.",
       "Assign point values to each worker that denote how enthusiastic they are about unionizing. A 5 is like \"hell yes I am down\" and a 1 is like \"I will tell the boss on you\".",

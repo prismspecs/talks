@@ -1,8 +1,9 @@
 /*
-  Speaker notes for the Digital Sabotage deck.
-  Fetches lecture-notes.md, renders it as a scrolling document, and
-  highlights + scrolls to the section that matches the slide currently
-  shown in the presenting window (received via postMessage).
+  Shared speaker-notes window for decks that pass `notes: true` to Deck.init.
+  Each deck has its own notes.html (loading slides-data.js, then this file) and
+  lecture-notes.md. Fetches lecture-notes.md, renders it as a scrolling document,
+  and highlights + scrolls to the section that matches the slide currently shown
+  in the presenting window (received via postMessage).
 */
 (() => {
   const content = document.getElementById('content');
@@ -107,7 +108,14 @@
     if (!e.data || typeof e.data.slide !== 'number') return;
     const slide = window.SLIDES && window.SLIDES[e.data.slide];
     const slug = slide && slide.note;
-    if (!slug) return;
+    if (!slug) {
+      // don't leave the previous slide's notes highlighted as if they were current
+      const prev = document.querySelector('.current');
+      if (prev) prev.classList.remove('current');
+      last = null;
+      status.textContent = 'synced, slide ' + (e.data.slide + 1) + ': no notes';
+      return;
+    }
     focusSection(slug);
     status.textContent = 'synced, slide ' + (e.data.slide + 1);
   });

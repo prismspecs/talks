@@ -16,7 +16,7 @@ window.SLIDES = [
 
   // ---- II. Haraway ----
   { "kind": "section", "title": "Donna Haraway", "sub": "A Cyborg Manifesto" },
-  { "kind": "text", "title": "The cyborg as a site of resistance",
+  { "kind": "text", "prose": true, "title": "The cyborg as a site of resistance",
     "body": [
       "While technologies inherit cultural scripts from these layers, they also open spaces for disruption, resistance, and redefinition.",
       "The cyborg as a hybrid figure disrupts traditional boundaries, creating potential for reshaping social relations, particularly around gender, race, and identity.",
@@ -42,18 +42,18 @@ window.SLIDES = [
     "caption": "Information: Why don’t the cops fight each other? (2022)" },
   { "kind": "video", "src": "https://player.vimeo.com/video/871904228",
     "caption": "Why don’t the cops fight each other? (2022)" },
-  { "kind": "text", "title": "Boogaloo Bias", "sub": "Derek Curry & Jennifer Gradecki",
+  { "kind": "text", "prose": true, "title": "Boogaloo Bias", "sub": "Derek Curry & Jennifer Gradecki",
     "body": [
       "Examines bias in AI model outputs, emphasizing the social consequences of biased training data on public perception and security practices."
     ] },
 
   // ---- Closing ----
-  { "kind": "text", "title": "On Exactitude in Science", "sub": "Jorge Luis Borges, 1946",
+  { "kind": "text", "prose": true, "title": "On Exactitude in Science", "sub": "Jorge Luis Borges, 1946",
     "body": [
       "An empire creates a map so detailed that it covers the entire territory of the empire itself.",
       "Machine forgetting, and the process of so-called optimization as a cultural artifact."
     ] },
-  { "kind": "text", "title": "Demand Full Automation", "sub": "Nick Srnicek & Alex Williams, Inventing the Future",
+  { "kind": "text", "prose": true, "title": "Demand Full Automation", "sub": "Nick Srnicek & Alex Williams, Inventing the Future",
     "body": [
       "Full automation as a means to achieve a post-capitalist society, reducing the necessity of human labor.",
       "Who benefits from the systems we build, and at what cost?"
